@@ -6,7 +6,7 @@ import Headhtml from '@/components/Headhtml';
 const monterrat = Montserrat({
     subsets: ['latin'],
     style: 'normal',
-    weight: ['100','200','500','800','900']
+    weight: ['100','200','400']
 })
 function DefaultLayout({children}) {
     return (

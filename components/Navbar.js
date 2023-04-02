@@ -16,7 +16,7 @@ function Navbar(props) {
     const menuRef = useClickOutSide(() => setOpenMenu(false))
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 ${openMenu && 'bg-white'}`}>
-            <div className='max-w-[1536px] h-[80px] p-4 relative mx-auto flex items-center'>
+            <div className='max-w-[1536px] h-[80px] p-4 relative mx-auto flex items-center font-bold'>
                 <div className='w-full'>
                     <div className='flex items-center justify-between text-[20px] gap-4'>
                         <Link href={'/'} className='flex items-center gap-2 lg:flex-1' title='Website L.T Travel'>
