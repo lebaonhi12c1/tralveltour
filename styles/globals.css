@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
   padding: 0;
   margin: 0;
@@ -7,6 +10,7 @@ ul{
   list-style: none;
 }
 a{
+  display: block;
   text-decoration: none;
   color: #000;
 
@@ -18,11 +22,31 @@ input:focus-visible{
   outline: none;
 }
 .root-container{
-  width: 1100px;
+  width: 1024px;
   margin: 0 auto;
 }
 :root{
   --primary-color: #fff;
   --secondary-color: #ccc;
   --three-color: #000;
+  --navheight: 80px;
+}
+.center-element{
+  margin: var(--navheight) 0;
+}
+@media (max-width: 1023px) {
+  .root-container{
+    width: 980px;
+  }
+}
+@media (max-width: 767px) {
+  .root-container{
+    width: 640px;
+  }
+}
+@media (max-width: 639px) {
+  .root-container{
+    width: 100%;
+    padding: 16px;
+  }
 }
