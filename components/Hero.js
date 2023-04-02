@@ -4,7 +4,7 @@ import Box from './Box';
 
 function Hero({heading,home}) {
     return (
-        <div className='h-[280px] lg:h-[650px] flex items-center flex-col justify-center gap-4 lg:gap-10'>
+        <div className='h-[280px] lg:h-[650px] flex items-center flex-col justify-center gap-4 lg:gap-10 pb-10'>
             {home && <h5 className='text-[15px] lg:text-[17px]'>Happy Travel</h5>}
             <h1 title='T.L Travel' className=' max-w-[800px] text-[27px] text-center leading-[50px] lg:leading-[80px] lg:text-[55px]'>
               {heading}
