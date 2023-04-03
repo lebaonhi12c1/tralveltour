@@ -52,10 +52,10 @@ function Slider({ type }) {
             delay: type === 'rating'?2200:2000,
             disableOnInteraction: false,
           }}
-          spaceBetween={16}
+          spaceBetween={32}
           slidesPerView={3}
           style={{
-            padding: '16px 0'
+            padding: '16px 10px 16px 4px'
           }}
         >
           {data.map((item) => (

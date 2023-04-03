@@ -27,11 +27,11 @@ function Navbar(props) {
                         {/* nav in desktop */}
                         <ul className='hidden lg:flex items-center flex-[2] justify-center gap-10'>
                             <li title='Home'>
-                                <Link className='h-full hover:text-orange-600 duration-200' href={'/'}>Home</Link>
+                                <Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/'}>Home</Link>
                             </li>
                             <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
                                 <div className='flex items-center gap-2'>
-                                    <Link className='h-full hover:text-orange-600 duration-200' href={'/destinations'}>Destinations</Link>
+                                    <Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/destinations'}>Destinations</Link>
                                     {!openDestinationsDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
                                 </div>
                                 {openDestinationsDeskop && (
@@ -50,7 +50,7 @@ function Navbar(props) {
                             </li>
                             <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
                                 <div className='flex items-center gap-2'>
-                                    <Link className='h-full hover:text-orange-600 duration-200' href={'/tours'}>
+                                    <Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/tours'}>
                                         Tours
                                     </Link>
                                     {!openToursDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
@@ -70,9 +70,9 @@ function Navbar(props) {
                                 )}
 
                             </li>
-                            <li title='Introduce'><Link className='h-full hover:text-orange-600 duration-200' href={'/introduce'}>Introduce</Link></li>
-                            <li title='Blogs'><Link className='h-full hover:text-orange-600 duration-200' href={'/blogs'}>Blogs</Link></li>
-                            <li title='Contact'><Link className='h-full hover:text-orange-600 duration-200' href={'/contact'}>Contact</Link></li>
+                            <li title='Introduce'><Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/introduce'}>Introduce</Link></li>
+                            <li title='Blogs'><Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/blogs'}>Blogs</Link></li>
+                            <li title='Contact'><Link className='h-full hover:text-orange-600  py-2 duration-200' href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[28px] cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>

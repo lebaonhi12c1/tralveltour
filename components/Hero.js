@@ -9,7 +9,7 @@ function Hero({heading,home}) {
             <h1 title='T.L Travel' className=' max-w-[800px] text-[27px] text-center leading-[50px] lg:leading-[80px] lg:text-[55px]'>
               {heading}
             </h1>
-            {home && <Box>
+            {home && <Box size={10}>
                 <button className={`text-[27px] bg-[#B6F3E8] p-2 py-1 rounded-lg uppercase italic duration-75 active:translate-x-1 active:translate-y-1`}>let&apos;s go</button>
             </Box>}
             

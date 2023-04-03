@@ -32,7 +32,7 @@ input:focus-visible{
   --navheight: 80px;
 }
 .center-element{
-  margin: var(--navheight) 0;
+  margin-top: var(--navheight);
 }
 @media (max-width: 1023px) {
   .root-container{

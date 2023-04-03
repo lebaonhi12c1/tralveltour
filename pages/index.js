@@ -88,11 +88,14 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="root-container">
-              <div className="bg-white lg:p-[60px]">
-                <ContactFrom/>
+           <div className="relative h-[800px]">
+              <div className="root-container absolute lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10">
+                <div className=" lg:p-[60px] bg-[rgba(255,255,255,0.4)] rounded-lg">
+                  <ContactFrom/>
+                </div>
               </div>
-            </div>
+              <img src="https://img.freepik.com/free-photo/fuji-mountain-kawaguchiko-lake-sunset-autumn-seasons-fuji-mountain-yamanachi-japan_335224-1.jpg?w=1060&t=st=1680542887~exp=1680543487~hmac=70169b82a15668bad00e3baed1a42353fb9a57e6d6107196d1bf8c025379f081" className="absolute inset-0 w-full h-full object-cover hidden lg:block" alt="" />
+           </div>
           </div>
         </div>
       </main>
