@@ -10,7 +10,7 @@ function Hero({heading,home}) {
               {heading}
             </h1>
             {home && <Box>
-                <button className={`text-[27px] bg-[#B6F3E8] p-2 py-1 rounded-lg uppercase italic duration-75 active:translate-x-1 active:translate-y-1`}>les&apos;t go</button>
+                <button className={`text-[27px] bg-[#B6F3E8] p-2 py-1 rounded-lg uppercase italic duration-75 active:translate-x-1 active:translate-y-1`}>let&apos;s go</button>
             </Box>}
             
         </div>

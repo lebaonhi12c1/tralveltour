@@ -77,7 +77,7 @@ function Navbar(props) {
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
                             <button>Login</button>
                             <div>/</div>
-                            <button>Regisster</button>
+                            <button>Register</button>
                         </div>
                         {/* end nav in desktop */}
                         {/* nav in mobile */}

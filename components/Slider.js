@@ -1,6 +1,6 @@
 import { destination, tours, userRating } from "@/fakedata";
 import React, { useEffect, useState } from "react";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { v4 as uuidv4 } from "uuid";
 import CardDestination from "./CardDestination";
@@ -9,8 +9,16 @@ import "swiper/scss/navigation";
 import "swiper/scss/autoplay";
 import CardTour from "./CardTour";
 import CardUserRating from "./CardUserRating";
+import { handleHover } from "@/globalfuntions";
 
 function Slider({ type }) {
+  const [active,setActive] = useState(false)
+  useEffect(()=>{
+    const activeTime = setTimeout(() => {
+      setActive(false)
+    }, 3000);
+    return ()=>clearTimeout(activeTime)
+  },[active])
   const getValue = () => {
     switch (type) {
       case "destination":
@@ -59,17 +67,18 @@ function Slider({ type }) {
       </div>
       <div className="lg:hidden">
         <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation
+          modules={[Autoplay,Navigation]}
           autoplay={{
-            delay: 2000,
+            delay: type === 'rating'?2200:2000,
             disableOnInteraction: false,
           }}
           spaceBetween={type==='tour'?48:16}
+          navigation={active}
           slidesPerView={1}
           style={{
             padding: '12px'
           }}
+          onTouchMove={()=>setActive(true)}
         >
           {data.map((item) => (
             <SwiperSlide key={uuidv4()}>

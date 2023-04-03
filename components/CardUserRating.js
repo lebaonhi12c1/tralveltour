@@ -4,7 +4,7 @@ import {v4 as uuidv4} from "uuid"
 function CardUserRating({ value }) {
   return (
     <div className="flex items-center justify-center">
-      <div className="flex flex-col gap-3 justify-center items-center rounded-full border-[2px] border-gray-400 w-[300px] h-[300px]  shadow-lg shadow-gray-400">
+      <div className="flex flex-col gap-3 justify-center items-center rounded-full  w-[300px] h-[300px]  shadow-lg shadow-gray-400">
         <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
           <img
             src={value.avatar}
