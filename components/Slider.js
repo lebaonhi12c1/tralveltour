@@ -41,7 +41,7 @@ function Slider({ type }) {
           modules={[Navigation, Autoplay]}
           navigation
           autoplay={{
-            delay: 2000,
+            delay: type === 'rating'?2200:2000,
             disableOnInteraction: false,
           }}
           spaceBetween={16}
