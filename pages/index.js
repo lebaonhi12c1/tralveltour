@@ -25,7 +25,7 @@ export default function Home() {
             </div>
             <div className='h-[255px] lg:h-[600px] relative mt-[110px]'>
               <div className='root-container absolute -top-[145px] left-1/2 -translate-x-1/2 '>
-                <div className='bg-primary p-4 flex flex-col gap-4 h-[290px] justify-center rounded-sm lg:gap-10 lg:h-[400px]'>
+                <div className='bg-primary p-4 flex flex-col gap-4 min-h-[300px] justify-center rounded-sm lg:gap-10 lg:h-[400px]'>
                   <h2 className=' uppercase text-[28px] font-bold tracking-[8px] lg:text-[40px] lg:ml-10'>hello there!</h2>
                   <p className=' text-white  text-[20px] font-bold lg:text-[12px] lg:text-black max-w-[625px] self-center'>
                     Our travels are different from all the others! We love our business and want to see happy customers, so we always do our best for your comfort!
@@ -33,6 +33,11 @@ export default function Home() {
                 </div>
               </div>
               <Image src={background3} alt="Background T.L travel" title='Background T.L travel' loading='eager'className=' object-cover object-top block w-full h-full'/>
+            </div>
+            <div className='root-container'>
+              <div className='py-10 lg:my-[60px]'>
+                <Slider type='tour'/>
+              </div>
             </div>
           </div>
         </div>

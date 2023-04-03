@@ -16,4 +16,50 @@ const destination = [
         title: 'Nepal',
     },
 ]
-export {destination}
+const tours =[
+    {
+        title: 'Nepal Tours',
+        image: 'https://img.freepik.com/free-photo/young-woman-taking-photo-with-her-phone-beautiful-mountain-view_1258-84894.jpg?w=996&t=st=1680461090~exp=1680461690~hmac=b7dfb3e5cca454f9e57fa90bd8e0770fc3a1edf5b4219a7f0bc4a78dffe9ad04',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae optio amet? Aspernatur quae dolorem non, sequi consequatur magni minima sint dignissimos quam laborum amet corporis dolorum fugit atque rerum?',
+        price: 950,
+        rating: 10,
+        NumberOfDay: 9,
+        Age: 16,
+        type: 'Adventure',
+
+    },
+    {
+        title: 'Nepal Tours',
+        image: 'https://img.freepik.com/free-photo/beautiful-girl-making-drip-coffee-sunrise-viewpoint-pha-hi-village-chiang-rai-province-thailand_335224-1165.jpg?w=996&t=st=1680461351~exp=1680461951~hmac=4e82a8abe724cce2c80664611cbae53d4e7e3b72485000b61b4b6ca817d8f728',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae optio amet? Aspernatur quae dolorem non, sequi consequatur magni minima sint dignissimos quam laborum amet corporis dolorum fugit atque rerum?',
+        price: 950,
+        rating: 10,
+        NumberOfDay: 9,
+        Age: 16,
+        type: 'Adventure',
+
+    },
+    {
+        title: 'Nepal Tours',
+        image: 'https://img.freepik.com/free-photo/female-tourists-hand-have-happy-travel-map_1150-7581.jpg?w=996&t=st=1680461368~exp=1680461968~hmac=32f51192d6f199ccaaa1e909ab3fd8fdc9cbca09f1a2f85c1572d74f6cbcb3f2',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae optio amet? Aspernatur quae dolorem non, sequi consequatur magni minima sint dignissimos quam laborum amet corporis dolorum fugit atque rerum?',
+        price: 950,
+        rating: 10,
+        NumberOfDay: 9,
+        Age: 16,
+        type: 'Adventure',
+
+    },
+    {
+        title: 'Nepal Tours',
+        image: 'https://img.freepik.com/free-photo/tourist-taking-photos-nature-landscape-using-his-smartphone_346278-388.jpg?w=996&t=st=1680461385~exp=1680461985~hmac=16b8623eb5911f9684029f2d6b091450ff25423c6bb45186de7b24e12f6972e2',
+        desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae optio amet? Aspernatur quae dolorem non, sequi consequatur magni minima sint dignissimos quam laborum amet corporis dolorum fugit atque rerum?',
+        price: 950,
+        rating: 10,
+        NumberOfDay: 9,
+        Age: 16,
+        type: 'Adventure',
+
+    },
+]
+export {destination,tours}
