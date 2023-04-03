@@ -83,7 +83,7 @@ export default function Home() {
                   some text of your own or to change the font. Tell your
                   visitors a bit about your services.
                 </p>
-                <button className="uppercase rounded-md border-[5px] border-secondary p-2 text-white">
+                <button className="uppercase rounded-md p-2 text-white hover:scale-105 bg-secondary active:scale-90 duration-200">
                   learn more
                 </button>
               </div>

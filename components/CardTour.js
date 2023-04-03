@@ -7,9 +7,7 @@ import {BsCalendarDate} from 'react-icons/bs'
 function CardTour({ value }) {
   return (
     <div className="">
-        <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4 active:scale-90 duration-200" style={{
-          boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 12px,rgba(99, 99, 99, 0.2) 0px 2px 8px 0px,rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
-        }}>
+        <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4 active:scale-90 duration-200 shadow-lg shadow-slate-400">
           <div className="h-[200px] relative">
             <img
               src={value.image}
