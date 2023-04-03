@@ -35,7 +35,7 @@ export default function Home() {
               <Image src={background3} alt="Background T.L travel" title='Background T.L travel' loading='eager'className=' object-cover object-top block w-full h-full'/>
             </div>
             <div className='root-container'>
-              <div className='py-10 lg:my-[60px]'>
+              <div className='py-10 lg:pb-[60px] lg:my-[20px]'>
                 <Slider type='tour'/>
               </div>
             </div>

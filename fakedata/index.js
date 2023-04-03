@@ -56,8 +56,8 @@ const tours =[
         desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae optio amet? Aspernatur quae dolorem non, sequi consequatur magni minima sint dignissimos quam laborum amet corporis dolorum fugit atque rerum?',
         price: 950,
         rating: 10,
-        NumberOfDay: 9,
-        Age: 16,
+        numberOfDay: 9,
+        age: 16,
         type: 'Adventure',
 
     },

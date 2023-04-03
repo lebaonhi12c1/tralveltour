@@ -45,6 +45,9 @@ function Slider({ type }) {
           }}
           spaceBetween={16}
           slidesPerView={3}
+          style={{
+            padding: '16px 0'
+          }}
         >
           {data.map((item) => (
             <SwiperSlide key={uuidv4()}>
@@ -63,6 +66,9 @@ function Slider({ type }) {
           }}
           spaceBetween={type==='tour'?48:16}
           slidesPerView={1}
+          style={{
+            padding: '12px'
+          }}
         >
           {data.map((item) => (
             <SwiperSlide key={uuidv4()}>
