@@ -62,4 +62,34 @@ const tours =[
 
     },
 ]
-export {destination,tours}
+const userRating = [
+    {
+        avatar :'https://img.freepik.com/free-photo/cheerful-beautiful-young-asian-woman-feeling-happy-smiling-camera-while-traveling-chinatown-beijing-china_7861-1341.jpg?w=1060&t=st=1680511818~exp=1680512418~hmac=ae7a4c2828e72ea596b33e20d02d868c81248e70528ea981b300f347f62c4236',
+        name: 'Christine',
+        rating: 10,
+        comment: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid odio nesciunt at earum dolorem nam possimus optio expedita beatae, culpa quibusdam dolores ipsam incidunt quaerat dolor voluptates! Fugiat, repudiandae. Provident!',
+
+    },
+    {
+        avatar :'https://img.freepik.com/free-photo/beautiful-model-girl-with-perfect-fresh-clean-skin-youth-skin-care-concept-isolated-pastel-brown-background_658552-32.jpg?w=996&t=st=1680511931~exp=1680512531~hmac=4fdf5067af1f04fcb7f8ae141a51630a31af229aac2308beccce3b5d30fa853c',
+        name: 'Anna',
+        rating: 10,
+        comment: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid odio nesciunt at earum dolorem nam possimus optio expedita beatae, culpa quibusdam dolores ipsam incidunt quaerat dolor voluptates! Fugiat, repudiandae. Provident!',
+
+    },
+    {
+        avatar :'https://img.freepik.com/free-photo/portrait-successful-handsome-executive-businessman-smart-casual-wear-looking-camera-smiling-arms-crossed-modern-office-workplace-young-asia-guy-standing-contemporary-meeting-room_7861-2505.jpg?w=1060&t=st=1680511861~exp=1680512461~hmac=81f0317657c5941e7fe164726f275d3f0d6a28f5b5f6d0cac9f1116d574ef2fc',
+        name: 'Petter',
+        rating: 8,
+        comment: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid odio nesciunt at earum dolorem nam possimus optio expedita beatae, culpa quibusdam dolores ipsam incidunt quaerat dolor voluptates! Fugiat, repudiandae. Provident!',
+
+    },
+    {
+        avatar :'https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?w=996&t=st=1680511844~exp=1680512444~hmac=19e6470f1522597fa10efe19d237a6f8ddb6938cbc05da7b6d1dbeb8e2744f70',
+        name: 'John Son',
+        rating: 10,
+        comment: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid odio nesciunt at earum dolorem nam possimus optio expedita beatae, culpa quibusdam dolores ipsam incidunt quaerat dolor voluptates! Fugiat, repudiandae. Provident!',
+
+    },
+]
+export {destination,tours,userRating}

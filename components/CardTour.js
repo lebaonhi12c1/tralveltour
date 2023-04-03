@@ -45,7 +45,7 @@ function CardTour({ value }) {
           </div>
            <h5 title={value.title} className="flex items-center justify-center gap-1 text-[19px] mt-[44px]">
               <span className="text-red-500">{value.price}$</span>
-              <span className="text-secondary">/</span>
+              <span className="text-secondary p-2">/</span>
               <span className="text-secondary">Person</span>
            </h5>
            <p className=" text-[14px]  line-clamp-5" title={value.desc}>

@@ -1,4 +1,4 @@
-import { destination, tours } from "@/fakedata";
+import { destination, tours, userRating } from "@/fakedata";
 import React, { useEffect, useState } from "react";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/scss/navigation";
 import "swiper/scss/autoplay";
 import CardTour from "./CardTour";
+import CardUserRating from "./CardUserRating";
 
 function Slider({ type }) {
   const getValue = () => {
@@ -25,8 +26,8 @@ function Slider({ type }) {
         };
       case "rating":
         return {
-          data: "",
-          Card: "",
+          data:  userRating,
+          Card: CardUserRating,
         };
       default:
         break;

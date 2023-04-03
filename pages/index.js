@@ -39,6 +39,11 @@ export default function Home() {
                 <Slider type='tour'/>
               </div>
             </div>
+            <div className='root-container'>
+              <div className='pb-10 lg:pb-[60px] lg:mb-[20px]'>
+                <Slider type='rating'/>
+              </div>
+            </div>
           </div>
         </div>
       </main>
