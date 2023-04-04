@@ -4,10 +4,11 @@ import { AiFillStar, AiOutlineUser } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 import { BsCalendarDate } from "react-icons/bs";
 import { getBox } from "@/globalfuntions";
+import Link from "next/link";
 
 function CardTour({ value }) {
   return (
-    <div className="">
+      <Link href={`/tours/${value._id}`} className="">
       <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9] " style={
         getBox('#666ec9',7)
       }>
@@ -60,7 +61,7 @@ function CardTour({ value }) {
           {value.desc}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

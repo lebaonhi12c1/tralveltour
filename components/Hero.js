@@ -32,6 +32,15 @@ function Hero({type,heading,subheading}) {
                     </div>
                 </div>
             )
+        case 'tourDetails':
+            return (
+                <div className='h-[200px] lg:h-[500px] flex items-center flex-col justify-center gap-4 lg:gap-10 lg:my-0'>
+                    <h5 className='text-[17px] lg:text-[20px] italic text-white'>{subheading}</h5>
+                    <h1 title='T.L Travel' className=' max-w-[800px] text-[32px] text-center leading-[50px] lg:leading-[80px] lg:text-[60px] font-bold text-white'>
+                    {heading}
+                    </h1>
+                </div>
+            )
         default:
             break;
     }

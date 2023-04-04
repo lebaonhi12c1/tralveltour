@@ -9,7 +9,6 @@ import "swiper/scss/navigation";
 import "swiper/scss/autoplay";
 import CardTour from "./CardTour";
 import CardUserRating from "./CardUserRating";
-import { handleHover } from "@/globalfuntions";
 
 function Slider({ type }) {
   const [active,setActive] = useState(false)
@@ -80,7 +79,7 @@ function Slider({ type }) {
           }}
           onTouchMove={()=>setActive(true)}
         >
-          {data.map((item) => (
+          {data.map((item,index) => (
             <SwiperSlide key={uuidv4()}>
               <Card value={item} />
             </SwiperSlide>

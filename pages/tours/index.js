@@ -10,6 +10,7 @@ import { getReponsive } from "@/globalfuntions";
 import ContactFrom from "@/components/ContactFrom";
 function Tours(props) {
   const reponsive = getReponsive()
+  console.log(tours)
   return (
     <div>
       <Background url={tourBackground} />
