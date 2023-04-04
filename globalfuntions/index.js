@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export  const useClickOutSide = (action) =>{
   const nodeRef = useRef();
@@ -25,4 +25,22 @@ const getBox = (color,size)=>{
     boxShadow: box
   }
 }
-export {handleHover,getBox}
+const getReponsive = ()=>{
+  const [reponsive,setReponsive] = useState(false)
+  useEffect(()=>{
+    const handleReponsiveDefautl = ()=>{
+        window.innerWidth < 764 ?setReponsive(true) : setReponsive(false)
+    }
+    const handleReponsive = ()=>{
+        window.innerWidth < 764 ?setReponsive(true) : setReponsive(false)
+    }
+    handleReponsiveDefautl()
+    window.addEventListener('resize',handleReponsive)
+    return ()=>{
+        window.removeEventListener('resize',handleReponsive)
+        handleReponsiveDefautl()
+    }
+  },[])
+  return reponsive
+}
+export {handleHover,getBox,getReponsive}

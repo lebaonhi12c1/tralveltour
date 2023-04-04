@@ -18,8 +18,9 @@ export default function Home() {
         <Background url={background2} />
         <div className="center-element">
           <Hero
-            home={true}
+            type='home'
             heading={"Seeing the World, Through the Eyes of My Lens"}
+            subheading={'Happy Travel'}
           />
           <div className="bg-white">
             <div className="root-container bg-white">
