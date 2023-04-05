@@ -161,5 +161,35 @@ const userRating = [
 
     },
 ]
+const userComments = [
+    {
+        image: 'https://img.freepik.com/free-photo/no-problem-concept-bearded-man-makes-okay-gesture-has-everything-control-all-fine-gesture-wears-spectacles-jumper-poses-against-pink-wall-says-i-got-this-guarantees-something_273609-42817.jpg?w=996&t=st=1680701739~exp=1680702339~hmac=530be2005f6c5a9e062893118cd6a5b540adde7563538e43aed6597d5b39c17c',
+        name: 'Jonh',
+        evaluteStar: 5,
+        evaluteTime: '10 mounth ago',
+        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus illum saepe veniam nostrum officiis vel? Accusamus sint ut quasi deserunt excepturi, amet accusantium libero voluptate omnis doloremque quaerat velit.',
+    },
+    {
+        image: 'https://img.freepik.com/free-photo/no-problem-concept-bearded-man-makes-okay-gesture-has-everything-control-all-fine-gesture-wears-spectacles-jumper-poses-against-pink-wall-says-i-got-this-guarantees-something_273609-42817.jpg?w=996&t=st=1680701739~exp=1680702339~hmac=530be2005f6c5a9e062893118cd6a5b540adde7563538e43aed6597d5b39c17c',
+        name: 'Jonh',
+        evaluteStar: 5,
+        evaluteTime: '10 mounth ago',
+        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus illum saepe veniam nostrum officiis vel? Accusamus sint ut quasi deserunt excepturi, amet accusantium libero voluptate omnis doloremque quaerat velit.',
+    },
+    {
+        image: 'https://img.freepik.com/free-photo/no-problem-concept-bearded-man-makes-okay-gesture-has-everything-control-all-fine-gesture-wears-spectacles-jumper-poses-against-pink-wall-says-i-got-this-guarantees-something_273609-42817.jpg?w=996&t=st=1680701739~exp=1680702339~hmac=530be2005f6c5a9e062893118cd6a5b540adde7563538e43aed6597d5b39c17c',
+        name: 'Jonh',
+        evaluteStar: 5,
+        evaluteTime: '10 mounth ago',
+        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus illum saepe veniam nostrum officiis vel? Accusamus sint ut quasi deserunt excepturi, amet accusantium libero voluptate omnis doloremque quaerat velit.',
+    },
+    {
+        image: 'https://img.freepik.com/free-photo/no-problem-concept-bearded-man-makes-okay-gesture-has-everything-control-all-fine-gesture-wears-spectacles-jumper-poses-against-pink-wall-says-i-got-this-guarantees-something_273609-42817.jpg?w=996&t=st=1680701739~exp=1680702339~hmac=530be2005f6c5a9e062893118cd6a5b540adde7563538e43aed6597d5b39c17c',
+        name: 'Jonh',
+        evaluteStar: 5,
+        evaluteTime: '10 mounth ago',
+        comment: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus illum saepe veniam nostrum officiis vel? Accusamus sint ut quasi deserunt excepturi, amet accusantium libero voluptate omnis doloremque quaerat velit.',
+    },
+]
 const tours = listtours.map((item,index)=>({...item,_id: `${index}`}))
-export {destination,tours,userRating}
+export {destination,tours,userRating,userComments}
