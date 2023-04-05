@@ -167,6 +167,7 @@ function TourDetail({ tour }) {
                     <div
                       className=" text-yellow-500"
                       onClick={() => setcountStar(index)}
+                      key={index}
                     >
                       {index <= countStar ? <AiFillStar /> : <AiOutlineStar />}
                     </div>

@@ -11,8 +11,8 @@ function CardUserComent({value}) {
                 <div  className='italic font-bold text-[20px]'>{value.name}</div>
                 <div className='flex flex-col lg:flex-row gap-2'>
                     <div className='flex items-center gap-1 skew-x-[-20deg] text-yellow-500 text-[24px]'>
-                        {Array(value.evaluteStar).fill().map(item=>(
-                            <AiFillStar/>
+                        {Array(value.evaluteStar).fill().map((item,index)=>(
+                            <AiFillStar key={index}/>
                         ))}
                     </div>
                     <div className='italic underline text-secondary text-[18px]'>{value.evaluteTime}</div>
