@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Box from './Box';
 import { AiOutlineSearch } from 'react-icons/ai';
+import Link from 'next/link';
 function Hero({type,heading,subheading}) {
     const getHero = ()=>{
     switch (type) {
@@ -12,7 +13,7 @@ function Hero({type,heading,subheading}) {
                     {heading}
                     </h1>
                     <Box size={10}>
-                        <button className={`text-[27px] bg-[#B6F3E8] p-2 py-1 rounded-lg uppercase italic duration-75 active:translate-x-1 active:translate-y-1`}>let&apos;s go</button>
+                        <Link href={'/tours'} className={`text-[27px] bg-[#B6F3E8] p-2 py-1 rounded-lg uppercase italic duration-75 active:translate-x-1 active:translate-y-1`}>let&apos;s go</Link>
                     </Box>
                     
                 </div>
