@@ -70,16 +70,16 @@ function TourDetail({ tour }) {
                     className="grid grid-cols-2 lg:flex-1 p-4 gap-4 rounded-md border border-[#666ec9] lg:h-fit lg:grow-0"
                     style={getBox("#666ec9", 7)}
                   >
-                    <div className="rounded-md border-[2px] text-[18] border-black py-[28px]">
-                      <div className="flex gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[40px]">
+                    <div className="rounded-md border-[2px] border-black lg:py-[28px]">
+                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <SlPlane />
                         <div className=" text-secondary whitespace-nowrap">
                           {tour.title}
                         </div>
                       </div>
                     </div>
-                    <div className="rounded-md border-[2px] text-[18] border-black py-[28px]">
-                      <div className="flex gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[40px]">
+                    <div className="rounded-md border-[2px] border-black lg:py-[28px]">
+                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <GiRank3 />
                         <div className=" text-secondary whitespace-nowrap">
                           Level:
@@ -87,8 +87,8 @@ function TourDetail({ tour }) {
                         <div>{tour.rating}</div>
                       </div>
                     </div>
-                    <div className="rounded-md border-[2px] text-[18] border-black py-[28px]">
-                      <div className="flex gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[40px]">
+                    <div className="rounded-md border-[2px] border-black lg:py-[28px]">
+                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <FiUsers />
                         <div className=" text-secondary whitespace-nowrap">
                           Max People:
@@ -96,8 +96,8 @@ function TourDetail({ tour }) {
                         <div>{tour.rating}</div>
                       </div>
                     </div>
-                    <div className="rounded-md border-[2px] text-[18] border-black py-[28px]">
-                      <div className="flex gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[40px]">
+                    <div className="rounded-md border-[2px] border-black lg:py-[28px]">
+                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <RiEmotionHappyLine />
                         <div className=" text-secondary whitespace-nowrap">
                           {tour.age}
