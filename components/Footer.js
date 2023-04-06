@@ -9,7 +9,7 @@ function Footer(props) {
             <div className='root-container'>
                 <div className='flex flex-col lg:flex-row gap-4 justify-center lg:justify-between'>
                     <div className='flex items-center gap-2 text-[24px]'>
-                        <AiOutlineCopyright/><span>2035 by L.T Travel</span>
+                        <AiOutlineCopyright/><span>2035 by Enjoy Nepal</span>
                     </div>
                     <div className='flex gap-4'>
                         <Link href={'https://facebook.com'} className='text-white text-[32px]'>

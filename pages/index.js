@@ -20,7 +20,7 @@ export default function Home() {
           <Hero
             type='home'
             heading={"Seeing the World, Through the Eyes of My Lens"}
-            subheading={'Happy Travel'}
+            subheading={'Namaste'}
           />
           <div className="bg-white">
             <div className="root-container bg-white">
@@ -63,21 +63,21 @@ export default function Home() {
               <div className="h-[300px] lg:flex-1 lg:h-[455px]">
                 <Image
                   src={homeBackground}
-                  alt={"L.T Travel"}
-                  title="L.T Travel"
+                  alt={"Enjoy Nepal"}
+                  title="Enjoy Nepal"
                   loading="eager"
                   className=" w-full h-full object-cover"
                 />
               </div>
               <div className="bg-primary flex gap-4 lg:gap-[20px] flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
                 <h5
-                  title="Infomation about L.T Travel"
+                  title="Infomation about Enjoy Nepal"
                   className="italic text-[32px] font-bold lg:text-[46px] text-secondary"
                 >
                   About us
                 </h5>
                 <p
-                  title="Infomation about L.T Travel"
+                  title="Infomation about Enjoy Nepal"
                   className="text-[16px] text-center lg:w-[280px] text-white"
                 >
                   I’m a paragraph. Double click here or click Edit Text to add
