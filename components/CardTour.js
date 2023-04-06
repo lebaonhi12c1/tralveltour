@@ -13,13 +13,15 @@ function CardTour({ value }) {
         getBox('#666ec9',7)
       }>
         <div className="h-[200px] relative">
-          <img
-            src={value.image}
-            alt={value.title}
-            title={value.title}
-            loading="eager"
-            className="w-full h-full object-cover"
-          />
+          <div className="w-full h-full overflow-hidden">
+            <img
+              src={value.image}
+              alt={value.title}
+              title={value.title}
+              loading="eager"
+              className="w-full h-full object-cover hover:scale-110 duration-200"
+            />
+          </div>
           <div className="absolute left-4 bottom-4">
             <div className="text-white italic">{value.title}</div>
             <div className="flex items-center gap-4">
