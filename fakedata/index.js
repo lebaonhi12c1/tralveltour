@@ -229,6 +229,108 @@ const bloglist = [
         desc: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam accusamus distinctio unde sapiente voluptates excepturi veniam alias enim saepe temporibus nam dicta quisquam, soluta aut molestias quod a consectetur incidunt.',
     },
 ]
+const tourNav = [
+    {
+        title: 'Nepal',
+        tours:[
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+        ]
+    },
+    {
+        title: 'Nepal',
+        tours:[
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+        ]
+    },
+    {
+        title: 'Nepal',
+        tours:[
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+        ]
+    },
+    {
+        title: 'Nepal',
+        tours:[
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+        ]
+    },
+    {
+        title: 'Nepal',
+        tours:[
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+            {
+                tourTitle: 'tour item'
+            },
+        ]
+    },
+]
 const tours = listtours.map((item,index)=>({...item,_id: `${index}`}))
 const blogs = bloglist.map((item,index)=>({...item,_id: `${index}`}))
-export {destination,tours,userRating,userComments,blogs}
+export {destination,tours,userRating,userComments,blogs,tourNav}

@@ -6,6 +6,7 @@ import DefaultLayout from "@/layout/DefaultLayout";
 
 //const inter = Inter({ subsets: ['latin'] })
 import background2 from "@/public/images/background2.jpg";
+//import home from "@/public/images/home.jpg";
 import homeBackground from "@/public/images/home-background.jpg";
 import background3 from "@/public/images/background3.jpg";
 import Slider from "@/components/Slider";

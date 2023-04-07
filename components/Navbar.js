@@ -7,7 +7,10 @@ import Link from 'next/link';
 import { handleHover, useClickOutSide } from '@/globalfuntions';
 import logo from '@/public/images/logo.jpg'
 import Image from 'next/image';
+import { useRouter } from 'next/router';
+import {tourNav} from '@/fakedata'
 function Navbar(props) {
+    const router = useRouter()
     const [openMenu, setOpenMenu] = useState(false)
     const [openTours, setOpenTours] = useState(false)
     const [openDestination, setOpenDestination] = useState(false)
@@ -15,11 +18,10 @@ function Navbar(props) {
     const [openDestinationsDeskop, setOpenDestinationsDesktop] = useState(false)
     const [openSearchModal, setOpenSearchModal] = useState(false)
     const [searchValue, setSearchValue] = useState('')
-    const [active,setActive] = useState('Home')
     const menuRef = useClickOutSide(() => setOpenMenu(false))
     // ${openMenu && 'bg-white'}
     const handleSetActive = value =>{
-        setActive(value)
+        return router.pathname.includes(value)
     }
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm shadow-slate-400`}>
@@ -35,11 +37,11 @@ function Navbar(props) {
                         {/* nav in desktop */}
                         <ul className='hidden lg:flex items-center flex-[2] justify-center gap-10'>
                             <li title='Home'>
-                                <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'Home' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/'}>Home</Link>
+                                <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
                             </li>
                             <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
                                 <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'Destinations' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/destinations'}>Destinations</Link>
+                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
                                     {!openDestinationsDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
                                 </div>
                                 {openDestinationsDeskop && (
@@ -58,29 +60,30 @@ function Navbar(props) {
                             </li>
                             <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
                                 <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'Tours' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/tours'}>
+                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
                                         Tours
                                     </Link>
                                     {!openToursDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
                                 </div>
                                 {openToursDeskop && (
-                                    <ul className='bg-white flex flex-col shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden'>
-                                        <li>
-                                            <Link href={'/tours/item'} className='text-[16px] p-2 hover:bg-slate-300'>Tours item</Link>
-                                        </li>
-                                        <li>
-                                            <Link href={'/tours/item'} className='text-[16px] p-2 hover:bg-slate-300'>Tours item</Link>
-                                        </li>
-                                        <li>
-                                            <Link href={'/tours/item'} className='text-[16px] p-2 hover:bg-slate-300'>Tours item</Link>
-                                        </li>
+                                    <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-gray-300 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
+                                        {tourNav.map((item,index)=>(
+                                            <div key={index} className='flex flex-col gap-2'>
+                                                <div className="font-bold text-[16px]">{item.title}</div>
+                                                <ul className='flex flex-col gap-2'>
+                                                    {item.tours.map((item,index)=>(
+                                                        <li className="font-medium text-[14px] hover:text-primary" key={index}>{item.tourTitle}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
                                     </ul>
                                 )}
 
                             </li>
-                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'About' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/about'}>About us</Link></li>
-                            <li title='Blogs'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'Blogs' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/blogs'}>Blogs</Link></li>
-                            <li title='Contact'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${active === 'Contact' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} href={'/contact'}>Contact</Link></li>
+                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
+                            <li title='Blogs'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
+                            <li title='Contact'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[28px] cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
@@ -103,46 +106,46 @@ function Navbar(props) {
                     </div>
                     {openMenu && (
                         <ul className='flex flex-col gap-2 h-fit shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white' ref={menuRef}>
-                            <li><Link href={'/'} onClick={e=>handleSetActive(e.target.innerText)} className={`${active === 'Home' && 'text-primary'}`}>Home</Link></li>
+                            <li><Link href={'/'}  className={`${router.pathname === '/' && 'text-primary'}`}>Home</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenDestination(!openDestination)}>
-                                    <Link href={'/destinations'} onClick={e=>handleSetActive(e.target.innerText)} className={`${active === 'Destination' && 'text-primary'}`}>
+                                    <Link href={'/destinations'}  className={`${handleSetActive('destinations') && 'text-primary'}`}>
                                         Destinatons
                                     </Link>
                                     {openDestination ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openDestination && (
-                                    <ul className=" flex flex-col gap-1">
+                                    <ul className=" flex flex-col gap-1 p-4">
                                         <li>item</li>
                                         <li>item</li>
                                         <li>item</li>
                                     </ul>
                                 )}
                             </li>
-                            <li><Link href={'/about'} className={`${active === 'About us' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)} >About us</Link></li>
+                            <li><Link href={'/about'} className={`${handleSetActive('about') && 'text-primary'}`}  >About us</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenTours(!openTours)}>
-                                    <Link href={'/tours'} className={`${active === 'Tours' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)}>
+                                    <Link href={'/tours'} className={`${handleSetActive('tours') && 'text-primary'}`} >
                                         Tours
                                     </Link>
                                     {openTours ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openTours && (
-                                    <ul className=" flex flex-col gap-1">
+                                    <ul className=" flex flex-col gap-1 p-4">
                                         <li>item</li>
                                         <li>item</li>
                                         <li>item</li>
                                     </ul>
                                 )}
                             </li>
-                            <li><Link href={'/blogs'} className={`${active === 'Blogs' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)}>Blogs</Link></li>
-                            <li><Link href={'/contact'} className={`${active === 'Contact' && 'text-primary'}`} onClick={e=>handleSetActive(e.target.innerText)}>Contact</Link></li>
+                            <li><Link href={'/blogs'} className={`${handleSetActive('blogs') && 'text-primary'}`} >Blogs</Link></li>
+                            <li><Link href={'/contact'} className={`${handleSetActive('contact') && 'text-primary'}`} >Contact</Link></li>
                         </ul>
                     )}
                     {openSearchModal && (
                         <div className="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex items-center justify-center">
                             <div className='bg-white flex items-center rounded-md overflow-hidden focus-within:border-[2px] focus-within:border-blue-500'>
-                                <input type="search" value={searchValue} onChange={e => setSearchValue(e.target.innerText)} className='p-2 lg:p-4 lg:w-[400px]' spellCheck={false} />
+                                <input type="search" value={searchValue} onChange={e => setSearchValue(e.target.innerText)} className='p-2 lg:p-4 lg:w-[400px]' spellCheck={false} placeholder='Search now...' />
                                 <button className="h-full p-2 lg:p-4 bg-blue-500">
                                     <AiOutlineSearch className='text-[28px] text-white' />
                                 </button>
