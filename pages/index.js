@@ -32,10 +32,10 @@ export default function Home() {
             <div className="h-[255px] lg:h-[600px] relative mt-[110px]">
               <div className="root-container absolute -top-[145px] left-1/2 -translate-x-1/2 ">
                 <div className="bg-primary p-4 flex flex-col gap-4 min-h-[300px] justify-center rounded-sm lg:gap-10 lg:h-[400px]">
-                  <h2 className=" uppercase text-[28px] font-bold tracking-[8px] lg:text-[40px] lg:ml-10 text-secondary">
-                    hello there!
+                  <h2 className=" uppercase text-[28.75px] font-bold tracking-[8.75px] lg:text-[44px] lg:ml-10 text-secondary">
+                    Hello there!
                   </h2>
-                  <p className=" text-white  text-[20px] font-bold lg:text-[12px] lg:text-black max-w-[625px] self-center">
+                  <p className=" text-white  text-[19.75px] font-[600] tracking-[0.5px] lg:text-[15.75px] lg:mt-[4.75px] lg:text-black max-w-[625px] lg:max-w-[665px] self-center">
                     Our travels are different from all the others! We love our
                     business and want to see happy customers, so we always do
                     our best for your comfort!
@@ -70,22 +70,22 @@ export default function Home() {
                   className=" w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-primary flex gap-4 lg:gap-[20px] flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
+              <div className="bg-primary flex gap-4 lg:gap-5 lg:gap-[20px] flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
                 <h5
                   title="Infomation about Enjoy Nepal"
-                  className="italic text-[32px] font-bold lg:text-[46px] text-secondary"
+                  className="italic text-[32px] sm:font-bold lg:text-[48px] lg:tracking-[1.75px] lg:font-[700] text-secondary"
                 >
                   About us
                 </h5>
                 <p
                   title="Infomation about Enjoy Nepal"
-                  className="text-[16px] text-center lg:w-[280px] text-white"
+                  className="text-[16px] lg:text-[19.25px] lg:font-[500] lg:tracking-[0.55px] text-center lg:w-[480px] text-white"
                 >
                   I’m a paragraph. Double click here or click Edit Text to add
                   some text of your own or to change the font. Tell your
                   visitors a bit about your services.
                 </p>
-                <button className="uppercase rounded-md p-2 text-white hover:scale-105 bg-secondary active:scale-90 duration-200">
+                <button className="uppercase rounded-md py-2 px-5 lg:shadow-md lg:font-[600] lg:tracking-[0.75px] text-white hover:scale-105 bg-secondary active:scale-90 duration-200 mt-[10px] lg:mt-[14px]">
                   learn more
                 </button>
               </div>

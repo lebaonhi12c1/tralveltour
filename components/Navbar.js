@@ -32,17 +32,17 @@ function Navbar(props) {
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
                                 <Image src={logo} alt='Enjoy Nepal' title='Enjoy Nepal' loading='eager' className=' object-cover' fill={true}/>
                             </div>
-                            <span className=' whitespace-nowrap'>Enjoy Nepal</span>
+                            <span className='lg:text-[20.75px] lg:ml-[-6px] text-gray-900 whitespace-nowrap'>Enjoy Nepal</span>
                         </Link>
                         {/* nav in desktop */}
-                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-10'>
+                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12'>
                             <li title='Home'>
-                                <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
+                                <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
                             </li>
                             <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
                                 <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
-                                    {!openDestinationsDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
+                                    {!openDestinationsDeskop ? <AiOutlineDown className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openDestinationsDeskop && (
                                     <ul className='bg-white flex flex-col  shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden'>
@@ -60,10 +60,10 @@ function Navbar(props) {
                             </li>
                             <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
                                 <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
                                         Tours
                                     </Link>
-                                    {!openToursDeskop ? <AiOutlineDown /> : <AiOutlineUp />}
+                                    {!openToursDeskop ? <AiOutlineDown className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openToursDeskop && (
                                     <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-gray-300 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
@@ -81,15 +81,16 @@ function Navbar(props) {
                                 )}
 
                             </li>
-                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
-                            <li title='Blogs'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
-                            <li title='Contact'><Link className={`h-full hover:text-orange-600  py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
-                            <AiOutlineSearch className='text-[28px] cursor-pointer' onClick={() => setOpenSearchModal(true)} />
+                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
+                            <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
+                            <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
+                            <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
-                            <button className='text-primary'>Register</button>
+                            <button className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 '>Login</button>
                             <div>/</div>
-                            <button>Login</button>
+                            <button className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 '>Register</button>
+
                         </div>
                         {/* end nav in desktop */}
                         {/* nav in mobile */}
@@ -145,7 +146,7 @@ function Navbar(props) {
                     {openSearchModal && (
                         <div className="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex items-center justify-center">
                             <div className='bg-white flex items-center rounded-md overflow-hidden focus-within:border-[2px] focus-within:border-blue-500'>
-                                <input type="search" value={searchValue} onChange={e => setSearchValue(e.target.innerText)} className='p-2 lg:p-4 lg:w-[400px]' spellCheck={false} placeholder='Search now...' />
+                                <input type="search" value={searchValue} onChange={e => setSearchValue(e.target.value)} className='p-2 lg:p-4 lg:w-[400px]' spellCheck={false} placeholder='Search now...' />
                                 <button className="h-full p-2 lg:p-4 bg-blue-500">
                                     <AiOutlineSearch className='text-[28px] text-white' />
                                 </button>
