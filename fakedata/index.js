@@ -331,6 +331,24 @@ const tourNav = [
         ]
     },
 ]
+
+const locations = [
+    {
+        title: 'San Francisco',
+        image: 'https://img.freepik.com/free-photo/beautiful-shot-golden-gate-bridge_181624-3381.jpg?w=996&t=st=1680926762~exp=1680927362~hmac=b12af945b8738c93a860b6cd51cbfb2c58b11ee9462b452c4ebe6c6ca35e0e70',
+        tourQuantity: 5,
+    },
+    {
+        title: 'Nepal',
+        image: 'https://img.freepik.com/free-photo/view-lake-front-mountains-with-skyline_1359-739.jpg?w=996&t=st=1680926685~exp=1680927285~hmac=72ef252ab29f29b55c25a22170ed5db71232fd4ca2dbb226f3d98ce28375a0d3',
+        tourQuantity: 5,
+    },
+    {
+        title: 'North Italy',
+        image: 'https://img.freepik.com/free-photo/high-angle-shot-beautiful-view-amalfi-coast-italy_181624-30289.jpg?w=996&t=st=1680926714~exp=1680927314~hmac=3510b8df0a8402edf44c65d22fafe0458003d61ba27d360722b0cbf77ea2f3a6',
+        tourQuantity: 5,
+    },
+]
 const tours = listtours.map((item,index)=>({...item,_id: `${index}`}))
 const blogs = bloglist.map((item,index)=>({...item,_id: `${index}`}))
-export {destination,tours,userRating,userComments,blogs,tourNav}
+export {destination,tours,userRating,userComments,blogs,tourNav,locations}
