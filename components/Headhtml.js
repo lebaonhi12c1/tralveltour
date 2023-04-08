@@ -18,7 +18,7 @@ function Headhtml(props) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             {/* meta preview link */}
-            <meta property="og:image" content={logo} />
+            <meta property="og:image" content="/images/review_image.jpg" />
             <meta property="og:title" content="Enjoy Nepal Treks & Tours" />
             <link rel="icon" href="/images/logo.jpg" />
             

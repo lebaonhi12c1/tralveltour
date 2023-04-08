@@ -37,12 +37,12 @@ function Navbar(props) {
                         {/* nav in desktop */}
                         <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12'>
                             <li title='Home'>
-                                <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
+                                <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
                             </li>
                             <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
-                                <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
-                                    {!openDestinationsDeskop ? <AiOutlineDown className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
+                                <div className='flex items-center gap-2 lg:hover:text-orange-600'>
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
+                                    {!openDestinationsDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openDestinationsDeskop && (
                                     <ul className='bg-white flex flex-col  shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden'>
@@ -59,11 +59,11 @@ function Navbar(props) {
                                 )}
                             </li>
                             <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
-                                <div className='flex items-center gap-2'>
-                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
+                                <div className='flex items-center gap-2 lg:hover:text-orange-600'>
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
                                         Tours
                                     </Link>
-                                    {!openToursDeskop ? <AiOutlineDown className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-4px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
+                                    {!openToursDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openToursDeskop && (
                                     <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-gray-300 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
@@ -81,9 +81,9 @@ function Navbar(props) {
                                 )}
 
                             </li>
-                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
-                            <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
-                            <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.75px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
+                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
+                            <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
+                            <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
