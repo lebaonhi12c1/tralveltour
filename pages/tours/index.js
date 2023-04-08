@@ -57,6 +57,7 @@ function Tours(props) {
               <div className="">
                 <Paging size={reponsive? 4: 9} lenght={tours.length}/>
               </div>
+              <div className="hidden lg:block lg:border-b-[1px] lg:border-gray-300 "></div>
               <div>
                 <ContactFrom/>
               </div>

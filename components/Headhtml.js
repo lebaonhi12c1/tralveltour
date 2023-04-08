@@ -18,7 +18,7 @@ function Headhtml(props) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             {/* meta preview link */}
-            <meta property="og:image" content={logo} />
+            <meta property="og:image" content="https://tralveltour.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.e16eabac.jpg&w=1920&q=75" />
             <meta property="og:title" content="Enjoy Nepal Treks & Tours - Trekking Tours in Nepal with Professional Guides"/>
             <meta property="og:description" content="Enjoy Nepal Treks & Tours provides trekking tours in Nepal with attractive packages, professional guides, and quality services. Book your tour today!"/>
 
