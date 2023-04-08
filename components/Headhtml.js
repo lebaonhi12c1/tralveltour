@@ -18,8 +18,10 @@ function Headhtml(props) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             {/* meta preview link */}
-            <meta property="og:image" content="/images/review_image.jpg" />
-            <meta property="og:title" content="Enjoy Nepal Treks & Tours" />
+            <meta property="og:image" content={`${process.env.BASE_URL}/images/review_image.jpg`} />
+            <meta property="og:title" content="Enjoy Nepal Treks & Tours - Trekking Tours in Nepal with Professional Guides"/>
+            <meta property="og:description" content="Enjoy Nepal Treks & Tours provides trekking tours in Nepal with attractive packages, professional guides, and quality services. Book your tour today!"/>
+
             <link rel="icon" href="/images/logo.jpg" />
             
         </Head>
