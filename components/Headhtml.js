@@ -18,7 +18,7 @@ function Headhtml(props) {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
             {/* meta preview link */}
-            <meta property="og:image" content="https://img.freepik.com/free-photo/breathtaking-shot-mountain-cadini-di-misurina-italian-alps_181624-8456.jpg?w=1060&t=st=1680971196~exp=1680971796~hmac=7122ee14da457ff4912f3b9eb0802c6794cf387a48373be2acede5ff965571d7" />
+            <meta property="og:image" content={logo} />
             <meta property="og:title" content="Enjoy Nepal Treks & Tours - Trekking Tours in Nepal with Professional Guides"/>
             <meta property="og:description" content="Enjoy Nepal Treks & Tours provides trekking tours in Nepal with attractive packages, professional guides, and quality services. Book your tour today!"/>
 
