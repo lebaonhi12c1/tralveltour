@@ -351,4 +351,5 @@ const locations = [
 ]
 const tours = listtours.map((item,index)=>({...item,_id: `${index}`}))
 const blogs = bloglist.map((item,index)=>({...item,_id: `${index}`}))
-export {destination,tours,userRating,userComments,blogs,tourNav,locations}
+const destinationlist = locations.map((item,index)=>({...item,_id:`${index}`}))
+export {destination,tours,userRating,userComments,blogs,tourNav,locations,destinationlist}
