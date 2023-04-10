@@ -209,7 +209,7 @@ function TourDetail({ tour }) {
               <div className="root-container">
                 <div className="flex flex-col items-start lg:justify-center gap-4 font-bold text-white lg:py-[60px] lg:items-center">
                   <div className='text-[24px]'>Get in Touch</div>
-                  <div>500 Terry Francine St,<br/>San Fransico, CA9418</div>
+                  <div>Văn phòng hạng A nằm tại số 29 đường Lê Duẩn, Quận 1, TP.HCM</div>
                   <div>096 651 27 40</div>
                   <div>trekking.himalayanofficial@gmail.com</div>
                   <div className="flex items-center gap-2 text-[24px]">
