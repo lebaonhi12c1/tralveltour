@@ -5,7 +5,7 @@ import React from 'react';
 function CardBlog({value}) {
     const reponsive = getReponsive()
     return (
-        <Link href={`/blogs/${value._id}`} className='flex flex-col lg:flex-row gap-4 border border-secondary lg:border-none rounded-lg items-center lg:items-start p-4'
+        <Link href={`/blogs/${value._id}`} className='flex flex-col lg:flex-row gap-4 border border-secondary  rounded-lg items-center lg:items-start p-4'
          style={reponsive ? {boxShadow: ''} : getBox('#666ec9',7)}
         >
             <div className='rounded-lg overflow-hidden w-full h-[200px] lg:w-[350px] lg:h-[230px] flex-shrink-0'>

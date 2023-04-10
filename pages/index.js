@@ -35,7 +35,7 @@ export default function Home() {
                   <h2 className=" uppercase text-[28.75px] font-bold tracking-[8.75px] lg:text-[44px] lg:ml-10 text-secondary">
                     Hello there!
                   </h2>
-                  <p className=" text-white  text-[19.75px] font-[600] tracking-[0.5px] lg:text-[15.75px] lg:mt-[4.75px]  max-w-[625px] lg:max-w-[665px] self-center">
+                  <p className=" text-white  text-[19.75px] font-[600] tracking-[0.5px] lg:text-[15.75px] lg:mt-[4.75px]  max-w-[625px] lg:max-w-[85%] self-center">
                     Our travels are different from all the others! We love our
                     business and want to see happy customers, so we always do
                     our best for your comfort!

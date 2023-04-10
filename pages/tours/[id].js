@@ -99,10 +99,11 @@ function TourDetail({ tour }) {
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
                       <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <RiEmotionHappyLine />
-                        <div className=" text-secondary whitespace-nowrap">
+                        <div className="text-secondary whitespace-nowrap">Age:</div>
+                        <div className=" whitespace-nowrap">
                           {tour.age}+
                         </div>
-                        <div>Age</div>
+                        
                       </div>
                     </div>
                   </div>

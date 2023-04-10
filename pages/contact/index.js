@@ -1,4 +1,5 @@
 import React from 'react';
+import DefaultLayout from './../../layout/DefaultLayout';
 
 function Contact(props) {
     return (
@@ -7,5 +8,5 @@ function Contact(props) {
         </div>
     );
 }
-
+Contact.getLayout = DefaultLayout
 export default Contact;
