@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '@/public/images/logo.jpg'
+// import logo from '@/public/images/logo.jpg'
 
 import Head from 'next/head';
 function Headhtml(props) {

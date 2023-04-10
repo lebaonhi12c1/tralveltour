@@ -9,9 +9,7 @@ import Link from "next/link";
 function CardTour({ value }) {
   return (
       <Link href={`/tours/${value._id}`} className="">
-      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9] " style={
-        getBox('#666ec9',7)
-      }>
+      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400">
         <div className="h-[200px] relative">
           <div className="w-full h-full overflow-hidden">
             <img

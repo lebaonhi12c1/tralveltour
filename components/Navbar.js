@@ -28,11 +28,11 @@ function Navbar(props) {
             <div className='max-w-[1536px] h-[80px] p-4 relative mx-auto flex items-center font-bold'>
                 <div className='w-full h-full'>
                     <div className='flex items-center justify-between text-[20px] gap-4 h-full'>
-                        <Link href={'/'} className='flex items-center gap-2 h-full lg:flex-1' title='Website Enjoy Nepal'>
+                        <Link href={'/'} className='flex items-center gap-1 h-full lg:flex-1' title='Website Enjoy Nepal'>
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
                                 <Image src={logo} alt='Enjoy Nepal' title='Enjoy Nepal' loading='eager' className=' object-cover' fill={true}/>
                             </div>
-                            <span className='lg:text-[20.75px] lg:ml-[-6px] text-gray-900 whitespace-nowrap'>Enjoy Nepal</span>
+                            <span className='lg:text-[20.75px]  text-gray-900 whitespace-nowrap'>Enjoy Nepal</span>
                         </Link>
                         {/* nav in desktop */}
                         <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12'>
@@ -87,9 +87,9 @@ function Navbar(props) {
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
-                            <button className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 '>Login</button>
+                            <button className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Login</button>
                             <div>/</div>
-                            <button className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 '>Register</button>
+                            <button className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</button>
 
                         </div>
                         {/* end nav in desktop */}

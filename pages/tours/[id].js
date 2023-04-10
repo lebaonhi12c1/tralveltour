@@ -100,9 +100,9 @@ function TourDetail({ tour }) {
                       <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
                         <RiEmotionHappyLine />
                         <div className=" text-secondary whitespace-nowrap">
-                          {tour.age}
+                          {tour.age}+
                         </div>
-                        <div>+ Age</div>
+                        <div>Age</div>
                       </div>
                     </div>
                   </div>
@@ -160,7 +160,7 @@ function TourDetail({ tour }) {
               } flex items-center justify-center flex-col gap-4 p-4 border-t-2 border-b border-t-secondary border-b-slate-400 py-[60px]`}
             >
               <div className="text-[24px] font-bold"> {getEvalue()}</div>
-              <div className="flex items-center gap-2 text-[24px]">
+              <div className="flex items-center gap-2 text-[24px] cursor-pointer">
                 {Array(5)
                   .fill()
                   .map((item, index) => (
@@ -169,11 +169,11 @@ function TourDetail({ tour }) {
                       onClick={() => setcountStar(index)}
                       key={index}
                     >
-                      {index <= countStar ? <AiFillStar /> : <AiOutlineStar />}
+                      {index <= countStar ? <AiFillStar className="hover:scale-110 active:scale-95 duration-100"/> : <AiOutlineStar className="hover:scale-105 hover:text-orange-500 active:scale-95 duration-100"/>}
                     </div>
                   ))}
               </div>
-              <button className="flex border border-primary text-primary bg-transparent rounded-full p-2 text-center" onClick={()=>setopenComent(!openComent)}>
+              <button className="flex border border-primary text-primary bg-transparent rounded-full p-2 text-center select-none active:scale-95" onClick={()=>setopenComent(!openComent)}>
                    <span> Write your comment...</span>
                     <BsPen/>
               </button>
@@ -182,18 +182,19 @@ function TourDetail({ tour }) {
                  <input
                    type="text"
                    placeholder="Enter your comment..."
-                   className="w-[300px] border border-slate-200 rounded-lg py-3 px-5 outline-none  bg-transparent"
+                   className="w-[300px] border border-slate-200 rounded-lg py-3 px-6 outline-none  bg-transparent"
                  />
                  <button className="inline-flex items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-500 rounded-lg h-[40px]">
                     Apply
                 </button>
                 </div>
              )}
-              <select name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow shadow-slate-400'>
-                <option value="">value</option>
-                <option value="">value</option>
-                <option value="">value</option>
-                <option value="">value</option>
+              <select name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow select-none hover:cursor-pointer shadow-slate-400'>
+                <option value=""  className="hover:cursor-pointer"selected>Filter comments</option>
+                <option value="" className="hover:cursor-pointer">value</option>
+                <option value="" className="hover:cursor-pointer">value</option>
+                <option value="" className="hover:cursor-pointer">value</option>
+                <option value="" className="hover:cursor-pointer">value</option>
               </select>
             </div>
             <div className="root-container">
