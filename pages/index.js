@@ -12,6 +12,7 @@ import background3 from "@/public/images/background3.jpg";
 import Slider from "@/components/Slider";
 import Image from "next/image";
 import ContactFrom from "@/components/ContactFrom";
+import Link from 'next/link'
 export default function Home() {
   return (
     <>
@@ -85,9 +86,9 @@ export default function Home() {
                   some text of your own or to change the font. Tell your
                   visitors a bit about your services.
                 </p>
-                <button className="uppercase rounded-md py-2 px-5 lg:shadow-md lg:font-[600] lg:tracking-[0.75px] text-white hover:scale-105 bg-secondary active:scale-90 duration-200 mt-[10px] lg:mt-[14px]">
+                <Link href={'/about'} className="uppercase rounded-md py-2 px-5 lg:shadow-md lg:font-[600] lg:tracking-[0.75px] text-white hover:scale-105 bg-secondary active:scale-90 duration-200 mt-[10px] lg:mt-[14px]">
                   learn more
-                </button>
+                </Link>
               </div>
             </div>
            <div className = 'root-container'>
