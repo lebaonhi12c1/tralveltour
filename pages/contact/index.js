@@ -24,14 +24,14 @@ function Contact(props) {
                                 Tòa nhà Saigon Tower
                             </h5>
                             <div>
-                                <div>🗺️  Văn phòng hạng A nằm tại số 29 đường Lê Duẩn, Quận 1, TP.HCM</div>
+                                <div className=''>🗺️  Văn phòng hạng A nằm tại số 29 đường Lê Duẩn, Quận 1, TP.HCM</div>
                             </div>
                             <div>
 
                                 <div>📞 096 651 27 40</div>
                             </div>
                             <div>
-                                <div>✉️ trekking.himalayanofficial@gmail.com</div>
+                                <div className='w-[90%]'>✉️ trekking.himalayanofficial@gmail.com</div>
                             </div>
                         </div>
                     </div>

@@ -211,7 +211,7 @@ function TourDetail({ tour }) {
                   <div className='text-[24px]'>Get in Touch</div>
                   <div>Văn phòng hạng A nằm tại số 29 đường Lê Duẩn, Quận 1, TP.HCM</div>
                   <div>096 651 27 40</div>
-                  <div>trekking.himalayanofficial@gmail.com</div>
+                  <div className="w-[90%]">trekking.himalayanofficial@gmail.com</div>
                   <div className="flex items-center gap-2 text-[24px]">
                       <FaFacebookF/>
                       <BsTwitter/>

@@ -7,7 +7,7 @@ function ContactFrom(props) {
         <div className='flex flex-col lg:flex-row gap-4'>
             <div className='flex flex-col  items-center justify-center gap-2 lg:flex-1 lg:justify-start lg:mt-11 lg:items-start '>
                 <h5 title='Contact Enjoy Nepal' className="text-[32px] text-secondary tracking-[12px] uppercase font-bold lg:font-[700]">Contact</h5>
-                <h6 title='Contact Enjoy Nepal' className='italic text-[20px] text-secondary lg:font-[600]'>Enjoy Nepal</h6>
+                <h6 title='Contact Enjoy Nepal' className='italic text-[20px] text-secondary lg:font-[600] whitespace-nowrap'>Enjoy Nepal</h6>
                 <div className='border-[2px] w-[20px] border-secondary lg:my-[2.75px]'></div>
                 <Link href={'https://www.facebook.com/enjoynepaltrekking'} className='flex items-center gap-4 lg:my-[1.5px]'>
                     <FaFacebookF className='lg:text-[20px]'/>
