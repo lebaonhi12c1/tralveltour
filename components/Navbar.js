@@ -32,7 +32,7 @@ function Navbar(props) {
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
                                 <Image src={logo} alt='Enjoy Nepal' title='Enjoy Nepal' loading='eager' className=' object-cover' fill={true}/>
                             </div>
-                            <span className='lg:text-[20.75px]  text-gray-900 whitespace-nowrap'>Enjoy Nepal</span>
+                            
                         </Link>
                         {/* nav in desktop */}
                         <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12'>
