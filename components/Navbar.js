@@ -87,9 +87,12 @@ function Navbar(props) {
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
-                            <button className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100 text-secondary'>Login</button>
+
+
+                            <Link href={'/login'} className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Login</Link>
+
                             <div>/</div>
-                            <button className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</button>
+                            <Link href={'/register'} className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</Link>
 
                         </div>
                         {/* end nav in desktop */}
