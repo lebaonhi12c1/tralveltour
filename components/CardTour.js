@@ -5,26 +5,28 @@ import { v4 as uuidv4 } from "uuid";
 import { BsCalendarDate } from "react-icons/bs";
 import { getBox } from "@/globalfuntions";
 import Link from "next/link";
+import Image from "next/image";
 
 function CardTour({ value }) {
   return (
-      <Link href={`/tours/${value._id}`} className="">
-      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400">
+    <Link href={`/tours/${value._id}`} className="">
+      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400 h-[462px] w-[315px]">
         <div className="h-[200px] relative">
-          <div className="w-full h-full overflow-hidden">
-            <img
+          <div className="w-full h-full overflow-hidden relative">
+            <Image
               src={value.image}
               alt={value.title}
               title={value.title}
               loading="eager"
               className="w-full h-full object-cover hover:scale-110 duration-200"
+              fill={true}
             />
           </div>
           <div className="absolute left-4 bottom-4">
             <div className="text-white italic">{value.title}</div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
-                {Array(Math.ceil(value.rating / 2))
+                {Array(Math.ceil(value.rating))
                   .fill()
                   .map((item) => (
                     <AiFillStar className=" text-yellow-500" key={uuidv4()} />
@@ -41,7 +43,7 @@ function CardTour({ value }) {
               <span>{value.numberOfDay} Day</span>
             </div>
             <div className="flex items-center justify-center p-2 border border-secondary gap-1 text-[12px] whitespace-nowrap">
-              {value.type}
+              {value.level}
             </div>
             <div className="flex items-center justify-center p-2 border border-secondary gap-2 text-[12px] whitespace-nowrap">
               <AiOutlineUser />
@@ -57,8 +59,8 @@ function CardTour({ value }) {
           <span className="text-secondary p-2">/</span>
           <span className="text-secondary">Person</span>
         </h5>
-        <p className=" text-[14px]  line-clamp-5" title={value.desc}>
-          {value.desc}
+        <p className=" text-[14px]  line-clamp-5" title={value.title}>
+          {value.description}
         </p>
       </div>
     </Link>

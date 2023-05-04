@@ -3,6 +3,7 @@ import React from 'react';
 import { AiOutlineAccountBook, AiOutlineArrowRight } from 'react-icons/ai';
 import {HiLocationMarker}from 'react-icons/hi'
 function CardLocation({value}) {
+    console.log(value)
     return (
         <div className='flex flex-col gap-4'>
             <div className='items-center hidden lg:flex justify-between'>
@@ -11,8 +12,8 @@ function CardLocation({value}) {
                     <div className='flex gap-2'>
                         <HiLocationMarker className='text-secondary text-[24px] items-start'/>
                         <div className='flex flex-col gap-4'>
-                            <h5 className='text-secondary text-[24px] font-bold leading-[24px]'>{value.title}</h5>
-                            <span className='italic'>{value.tourQuantity} Tour</span>
+                            <h5 className='text-secondary text-[24px] font-bold leading-[24px]'>{value.name}</h5>
+                            <span className='italic'>{value.tours.length} Tour</span>
                         </div>
                     </div>
                 </div>
@@ -22,12 +23,12 @@ function CardLocation({value}) {
                 </Link>
             </div>
             <Link href={`/destinations/${value._id}`} className='relative h-[240px] lg:h-[420px] rounded-md overflow-hidden'>
-                <img src={value.image} alt={value.title} title={value.title} loading='eager' className='w-full h-full object-cover hover:scale-110 duration-200' />
+                <img src={value.image} alt={value.name} title={value.name} loading='eager' className='w-full h-full object-cover hover:scale-110 duration-200' />
                 <div className='flex gap-4 absolute lg:hidden left-4 bottom-4 items-start'>
                     <AiOutlineAccountBook className='text-slate-200 text-[24px]'/>
                     <div className="flex flex-col gap-2 text-slate-200">
-                        <h5 title={value.title} className="font-bold">{value.title}</h5>
-                        <span className='underline'>{value.tourQuantity} tour</span>
+                        <h5 title={value.name} className="font-bold">{value.name}</h5>
+                        <span className='underline'>{value.tours.length} tour</span>
                     </div>
                 </div>
             </Link>
