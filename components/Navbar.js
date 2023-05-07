@@ -35,13 +35,13 @@ function Navbar(props) {
                             
                         </Link>
                         {/* nav in desktop */}
-                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12'>
+                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12 text-secondary '>
                             <li title='Home'>
-                                <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' && 'text-primary'}`}  href={'/'}>Home</Link>
+                                <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' ? 'text-primary' :'text-secondary'}`}  href={'/'}>Home</Link>
                             </li>
                             <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
                                 <div className='flex items-center gap-2 lg:hover:text-orange-600'>
-                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') && 'text-primary'}`}  href={'/destinations'}>Destinations</Link>
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') ? 'text-primary' :'text-secondary'}`}  href={'/destinations'}>Destinations</Link>
                                     {!openDestinationsDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openDestinationsDeskop && (
@@ -60,13 +60,13 @@ function Navbar(props) {
                             </li>
                             <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
                                 <div className='flex items-center gap-2 lg:hover:text-orange-600'>
-                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') && 'text-primary'}`}  href={'/tours'}>
+                                    <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') ? 'text-primary' :'text-secondary'}`}  href={'/tours'}>
                                         Tours
                                     </Link>
                                     {!openToursDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
                                 {openToursDeskop && (
-                                    <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-gray-300 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
+                                    <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-slate-500 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
                                         {tourNav.map((item,index)=>(
                                             <div key={index} className='flex flex-col gap-2'>
                                                 <div className="font-bold text-[16px]">{item.title}</div>
@@ -81,13 +81,16 @@ function Navbar(props) {
                                 )}
 
                             </li>
-                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') && 'text-primary'}`}  href={'/about'}>About us</Link></li>
-                            <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') && 'text-primary'}`}  href={'/blogs'}>Blogs</Link></li>
-                            <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') && 'text-primary'}`}  href={'/contact'}>Contact</Link></li>
+                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') ? 'text-primary' :'text-secondary'}`}  href={'/about'}>About us</Link></li>
+                            <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') ? 'text-primary' :'text-secondary'}`}  href={'/blogs'}>Blogs</Link></li>
+                            <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') ? 'text-primary' :'text-secondary'}`}  href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
                         <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
+
+
                             <Link href={'/login'} className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Login</Link>
+
                             <div>/</div>
                             <Link href={'/register'} className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</Link>
 
@@ -107,10 +110,10 @@ function Navbar(props) {
                     </div>
                     {openMenu && (
                         <ul className='flex flex-col gap-2 h-fit shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white' ref={menuRef}>
-                            <li><Link href={'/'}  className={`${router.pathname === '/' && 'text-primary'}`}>Home</Link></li>
+                            <li><Link href={'/'}  className={`${router.pathname === '/' ? 'text-primary' :'text-secondary'}`}>Home</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenDestination(!openDestination)}>
-                                    <Link href={'/destinations'}  className={`${handleSetActive('destinations') && 'text-primary'}`}>
+                                    <Link href={'/destinations'}  className={`${handleSetActive('destinations') ? 'text-primary' :'text-secondary'}`}>
                                         Destinatons
                                     </Link>
                                     {openDestination ? <AiOutlineUp /> : <AiOutlineDown />}
@@ -123,10 +126,10 @@ function Navbar(props) {
                                     </ul>
                                 )}
                             </li>
-                            <li><Link href={'/about'} className={`${handleSetActive('about') && 'text-primary'}`}  >About us</Link></li>
+                            <li><Link href={'/about'} className={`${handleSetActive('about') ? 'text-primary' :'text-secondary'}`}  >About us</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenTours(!openTours)}>
-                                    <Link href={'/tours'} className={`${handleSetActive('tours') && 'text-primary'}`} >
+                                    <Link href={'/tours'} className={`${handleSetActive('tours') ? 'text-primary' :'text-secondary'}`} >
                                         Tours
                                     </Link>
                                     {openTours ? <AiOutlineUp /> : <AiOutlineDown />}
@@ -139,8 +142,8 @@ function Navbar(props) {
                                     </ul>
                                 )}
                             </li>
-                            <li><Link href={'/blogs'} className={`${handleSetActive('blogs') && 'text-primary'}`} >Blogs</Link></li>
-                            <li><Link href={'/contact'} className={`${handleSetActive('contact') && 'text-primary'}`} >Contact</Link></li>
+                            <li><Link href={'/blogs'} className={`${handleSetActive('blogs') ? 'text-primary' :'text-secondary'}`} >Blogs</Link></li>
+                            <li><Link href={'/contact'} className={`${handleSetActive('contact') ? 'text-primary' :'text-secondary'}`} >Contact</Link></li>
                         </ul>
                     )}
                     {openSearchModal && (

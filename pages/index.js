@@ -13,7 +13,7 @@ import Slider from "@/components/Slider";
 import Image from "next/image";
 import ContactFrom from "@/components/ContactFrom";
 import Link from 'next/link'
-export default function Home() {
+export default function Home({destination,tour}) {
   return (
     <>
       <main>
@@ -27,7 +27,7 @@ export default function Home() {
           <div className="bg-white">
             <div className="root-container bg-white">
               <div className="py-10 lg:py-[60px]">
-                <Slider type="destination" />
+                <Slider type="destination" value={destination} />
               </div>
             </div>
             <div className="h-[255px] lg:h-[600px] relative mt-[110px]">
@@ -54,7 +54,7 @@ export default function Home() {
             <div className="root-container">
               <div>
                 <div className="py-10 lg:pb-[60px] lg:my-[20px]">
-                  <Slider type="tour" />
+                  <Slider type="tour" value={tour}/>
                 </div>
                 <div className="pb-10 lg:pb-[60px] lg:mb-[20px]">
                   <Slider type="rating" />
@@ -71,7 +71,7 @@ export default function Home() {
                   className=" w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-primary flex gap-4 lg:gap-5 lg:gap-[20px] flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
+              <div className="bg-primary flex gap-4 lg:gap-5 flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
                 <h5
                   title="Infomation about Enjoy Nepal"
                   className="italic text-[32px] sm:font-bold lg:text-[48px] lg:tracking-[1.75px] lg:font-[700] text-secondary"
@@ -99,6 +99,20 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export const getStaticProps = async()=>{
+  const res = await fetch(`${process.env.SERVER_URL}/api/destination`)
+  const destination = await res.json()
+  const restour= await fetch(`${process.env.SERVER_URL}/api/tour`)
+  const tour = await restour.json()
+
+  return {
+    props: {
+      destination,
+      tour
+    }
+  }
 }
 
 Home.getLayout = DefaultLayout;

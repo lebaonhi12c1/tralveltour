@@ -15,6 +15,7 @@ import CardUserComent from "@/components/CardUserComent";
 import {FaFacebookF,FaInstagram} from 'react-icons/fa'
 import {BsTwitter} from 'react-icons/bs'
 import ContactFrom from "@/components/ContactFrom";
+import Image from "next/image";
 function TourDetail({ tour }) {
   const [view, setView] = useState(1);
   const [countStar, setcountStar] = useState(-1);
@@ -66,9 +67,9 @@ function TourDetail({ tour }) {
               </div>
               <div className="flex flex-col gap-6 lg:flex-row-reverse lg:items-start">
                 <div className="flex flex-col justify-center gap-4">
+                  {/* border border-[#666ec9] */}
                   <div
-                    className="grid grid-cols-2 lg:flex-1 p-4 gap-4 rounded-md border border-[#666ec9] lg:h-fit lg:grow-0"
-                    style={getBox("#666ec9", 7)}
+                    className="grid grid-cols-2 lg:flex-1 p-4 gap-4 rounded-md  lg:h-fit lg:grow-0 shadow-lg shadow-slate-300"
                   >
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
                       <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
@@ -84,7 +85,7 @@ function TourDetail({ tour }) {
                         <div className=" text-secondary whitespace-nowrap">
                           Level:
                         </div>
-                        <div>{tour.rating}</div>
+                        <div>{tour.level}</div>
                       </div>
                     </div>
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
@@ -126,32 +127,31 @@ function TourDetail({ tour }) {
                 <div className="border border-black lg:hidden"></div>
                 {view === 1 && (
                   <div
-                    className="flex flex-col lg:lg-4 gap-2 lg:flex-[3] lg:p-6 lg:border lg:border-[#666ec9] rounded-sm"
-                    style={reponsive ? { boxShadow: "" } : getBox("#666ec9", 7)}
+                    className="flex flex-col lg:lg-4 gap-2 lg:flex-[3] lg:p-6 rounded-sm shadow-lg shadow-slate-300"
                   >
                     <h4 title={tour.title} className="text-[20px] font-bold">
                       Details
                     </h4>
-                    <p title="details tour" className="">
-                      {tour.desc}
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Libero velit nesciunt dignissimos dicta aspernatur quis
-                      magni omnis suscipit voluptas odio voluptatibus ullam,
-                      aperiam facere recusandae dolore labore. Provident, enim
-                      distinctio? Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Repellat praesentium, numquam, eius
-                      rerum ad quod placeat iste facilis obcaecati, et quisquam
-                      atque magnam nesciunt odio quae! Ducimus consequatur
-                      eligendi odio. Lorem ipsum dolor sit amet consectetur
-                      adipisicing elit. Incidunt, tenetur corporis officiis
-                      veritatis quasi saepe temporibus. Reprehenderit numquam
-                      obcaecati amet repellendus minima voluptates optio,
-                      accusamus illo et, molestias repudiandae incidunt?
-                    </p>
+                    <div title="details tour" className="">
+                      {tour.description}
+                      <br />
+                      <div dangerouslySetInnerHTML={{ __html: tour.content }}></div>
+                    </div>
                   </div>
                 )}
                 {view === 2 && (
-                  <div className="flex-[3]">show image details</div>
+                  <div className="lg:flex-[3] flex flex-col gap-4 p-4 shadow-lg shadow-slate-300">
+                    <div className="relative h-[200px] lg:h-[400px]">
+                      <Image src={tour.image} alt={tour.title} title={tour.title} className="object-cover" fill={true} loading="eager"/>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                      {tour.images.map((item,index)=>(
+                        <div className="relative h-[200px]" key={index}>
+                          <Image src={item} alt={tour.title} className="object-cover" fill={true} loading="eager"/>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
@@ -233,20 +233,18 @@ function TourDetail({ tour }) {
 }
 TourDetail.getLayout = DefaultLayout;
 export async function getStaticPaths() {
-  const paths = tours.map((item) => {
-    return {
-      params: {
-        id: item._id,
-      },
-    };
-  });
+  const res = await fetch(`${process.env.SERVER_URL}/api/tour`)
+  const tours = await res.json()
+  
+  const paths = tours.map(item=>({params:{id: item._id}}))
   return {
     paths,
     fallback: false,
   };
 }
 export async function getStaticProps({ params }) {
-  const tour = tours.filter((item) => item._id === params.id)[0];
+  const res = await fetch(`${process.env.SERVER_URL}/api/tour/${params.id}`)
+  const tour = await res.json()
   return {
     props: {
       tour,

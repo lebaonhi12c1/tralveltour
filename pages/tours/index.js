@@ -3,12 +3,11 @@ import DefaultLayout from "./../../layout/DefaultLayout";
 import Background from "@/components/Background";
 import tourBackground from "@/public/images/tourbackground2.jpg";
 import Hero from "@/components/Hero";
-import { tours } from "@/fakedata";
 import CardTour from "./../../components/CardTour";
 import Paging from './../../components/Paging';
 import { getReponsive } from "@/globalfuntions";
 import ContactFrom from "@/components/ContactFrom";
-function Tours(props) {
+function Tours({tours}) {
   const reponsive = getReponsive()
   return (
     <div>
@@ -68,5 +67,16 @@ function Tours(props) {
     </div>
   );
 }
+
+export const getStaticProps = async()=>{
+  const res = await fetch(`${process.env.SERVER_URL}/api/tour`)
+  const tours = await res.json()
+  return {
+    props: {
+      tours,
+    }
+  }
+}
+
 Tours.getLayout = DefaultLayout;
 export default Tours;

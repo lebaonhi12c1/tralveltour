@@ -1,6 +1,7 @@
 import React from 'react';
 import DefaultLayout from './../../layout/DefaultLayout';
 import { blogs } from '@/fakedata';
+import Image from 'next/image';
 
 function BlogDetails({blog}) {
     return (
@@ -11,10 +12,13 @@ function BlogDetails({blog}) {
                         <h1 className='text-[24px] text-secondary font-bold lg:text-[60px]'>
                             {blog.title}
                         </h1>
-                        <img src={blog.image} alt={blog.title} title={blog.title} loading='eager' className='h-[280px] lg:h-[440px] object-cover ' />
+                       <div className='h-[280px] lg:h-[440px] relative'> <Image src={blog.image} alt={blog.title} title={blog.title} loading='eager' className=' object-cover ' fill={true} /></div>
                         <p className="">
-                            {blog.desc}
+                            {blog.description}
                         </p>
+
+                        <div dangerouslySetInnerHTML={{__html: blog.content}}>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -23,20 +27,19 @@ function BlogDetails({blog}) {
 }
 BlogDetails.getLayout = DefaultLayout
 export const getStaticPaths = async()=>{
-    const paths = blogs.map(item=>{
-        return {
-            params: {
-                id: item._id
-            }
-        }
-    })
+   
+    const res = await fetch(`${process.env.SERVER_URL}/api/blog`)
+    const blogs = await res.json()
+    const paths = blogs.map(item=>({params: {id: item._id}}))
     return {
         paths,
         fallback: false,
     }
 }
 export const getStaticProps = async ({params})=>{
-    const blog = blogs.filter(item=>item._id===params.id)[0]
+    
+    const res =  await fetch(`${process.env.SERVER_URL}/api/blog/${params.id}`)
+    const blog = await res.json()
     return {
         props:{
             blog,
