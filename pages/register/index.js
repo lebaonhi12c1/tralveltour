@@ -5,6 +5,7 @@ import Link from 'next/link';
 import facebookicon from '@/public/images/facebook.png'
 import googleicon from '@/public/images/google.png'
 import Image from 'next/image';
+import logo from '@/public/images/logo.jpg'
 function Register(props) {
     return (
         <div>
@@ -35,31 +36,16 @@ function Register(props) {
                     </div>
                     <button className='py-2 hover:scale-105 active:scale-90 text-white bg-secondary rounded-sm text-center w-full duration-150'>Register</button>
                     <div className='flex flex-col items-center gap-4'>
-                        <div>Login with:</div>
-                        <div className='flex items-center gap-4'>
-                            <div className='flex items-center gap-4'>
-                                <div className='relative w-[35px] h-[35px]'>
-                                    <Image
-                                        src={facebookicon}
-                                        className='object-cover'
-                                        fill={true}
-                                        loading='eager'
-                                        alt='img-social'
-                                    />
-                                </div>
-                            </div>
-                            <div className='flex items-center gap-4'>
-                                <div className='relative w-[35px] h-[35px]'>
-                                    <Image
-                                        src={googleicon}
-                                        className='object-cover'
-                                        fill={true}
-                                        loading='eager'
-                                        alt='img-social'
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        <div>Enjoy Nepal</div>
+                        <Link href={'/'} className='relative w-[100px] h-[100px]'>
+                            <Image
+                                src={logo}
+                                className='object-cover'
+                                fill={true}
+                                alt='logo'
+                                title='enjoy nepal'
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -95,7 +95,7 @@ function Navbar(props) {
                         {/* end nav in desktop */}
                         {/* nav in mobile */}
                         <div className=' lg:hidden flex items-center gap-4'>
-                            <AiOutlineLogin title='Login' className='text-[28px]' />
+                           <Link href={'/login'}> <AiOutlineLogin title='Login' className='text-[28px]' /></Link>
                             <AiOutlineSearch title='Search' className='text-[28px]' onClick={() => setOpenSearchModal(true)} />
                             {!openMenu ? (
                                 <BsList title='List' className='text-[28px]' onClick={() => setOpenMenu(true)} />
