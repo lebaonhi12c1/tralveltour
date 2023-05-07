@@ -127,11 +127,11 @@ function TourDetail({ tour }) {
                 <div className="border border-black lg:hidden"></div>
                 {view === 1 && (
                   <div
-                    className="flex flex-col lg:lg-4 gap-2 lg:flex-[3] lg:p-6 rounded-sm shadow-lg shadow-slate-300"
+                    className="flex flex-col lg:lg-4 gap-2 lg:flex-[3] lg:p-6 rounded-sm lg:shadow-lg lg:shadow-slate-300"
                   >
-                    <h4 title={tour.title} className="text-[20px] font-bold">
+                    {/* <h4 title={tour.title} className="text-[20px] font-bold">
                       Details
-                    </h4>
+                    </h4> */}
                     <div title="details tour" className="">
                       {tour.description}
                       <br />
@@ -233,7 +233,7 @@ function TourDetail({ tour }) {
 }
 TourDetail.getLayout = DefaultLayout;
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.SERVER_URL}/api/tour`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
   const tours = await res.json()
   
   const paths = tours.map(item=>({params:{id: item._id}}))
@@ -243,7 +243,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  const res = await fetch(`${process.env.SERVER_URL}/api/tour/${params.id}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/${params.id}`)
   const tour = await res.json()
   return {
     props: {

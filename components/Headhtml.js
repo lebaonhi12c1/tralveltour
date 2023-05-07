@@ -1,6 +1,6 @@
 import React from 'react';
 // import logo from '@/public/images/logo.jpg'
-
+import logo from '@/public/images/logo.jpg'
 import Head from 'next/head';
 function Headhtml(props) {
     return (
@@ -17,8 +17,8 @@ function Headhtml(props) {
             <meta name="keywords" content="Enjoy Nepal Treks & Tours, Nepal trekking, trekking tours, trekking travel, Nepal travel"></meta>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            {/* meta preview link */}
-            <meta property="og:image" content="https://img.freepik.com/free-vector/beautiful-hand-draw-landscape-with-mountain-sketch-design_1035-20277.jpg?w=900&t=st=1680976563~exp=1680977163~hmac=c104c53e79636b2a3cb24657ccd2b4e1baed64cfa775ce36a1f4c6feb4448440" />
+            {/* meta preview link https://img.freepik.com/free-vector/beautiful-hand-draw-landscape-with-mountain-sketch-design_1035-20277.jpg?w=900&t=st=1680976563~exp=1680977163~hmac=c104c53e79636b2a3cb24657ccd2b4e1baed64cfa775ce36a1f4c6feb4448440 */}
+            <meta property="og:image" content={logo} />
             <meta property="og:title" content="Enjoy Nepal Treks & Tours || Trekking Tours in Nepal with Professional Guides"/>
             <meta property="og:description" content="Enjoy Nepal Treks & Tours provides trekking tours in Nepal with attractive packages, professional guides, and quality services. Book your tour today!"/>
 

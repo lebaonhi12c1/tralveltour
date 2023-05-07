@@ -6,6 +6,7 @@ import facebookicon from '@/public/images/facebook.png'
 import googleicon from '@/public/images/google.png'
 import Image from 'next/image';
 import logo from '@/public/images/logo.jpg'
+import Loading from '@/components/Loading';
 function Register(props) {
     return (
         <div>
@@ -17,12 +18,12 @@ function Register(props) {
                     <Link href={'/login'} className='text-center underline'>Login now</Link>
                     <div className='flex flex-col gap-4 w-full'>
                         <div className='flex flex-col gap-2'>
-                            <label htmlFor="fristname" className='font-bold'>Fristname:</label>
+                            <label htmlFor="fristname" className='font-bold'>Fullname:</label>
                             <input type="text" name="fristname" id="fristname" className='border border-slate-400 rounded-sm py-1 px-2' placeholder='Enter your fristname...' />
                         </div>
                         <div className='flex flex-col gap-2'>
-                            <label htmlFor="lastname" className='font-bold'>Lastname:</label>
-                            <input type="text" name="lastname" id="lastname" className='border border-slate-400 rounded-sm py-1 px-2' placeholder='Enter your lastname...' />
+                            <label htmlFor="phone" className='font-bold'>Phone:</label>
+                            <input type="text" name="phone" id="phone" className='border border-slate-400 rounded-sm py-1 px-2' placeholder='Enter your phone...' />
                         </div>
 
                         <div className='flex flex-col gap-2'>
@@ -49,6 +50,7 @@ function Register(props) {
                     </div>
                 </div>
             </div>
+            <Loading/>
         </div>
     );
 }

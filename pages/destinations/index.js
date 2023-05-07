@@ -26,7 +26,7 @@ function Destinations({destinations}) {
 }
 
 export const getStaticProps = async()=>{
-    const res = await fetch(`${process.env.SERVER_URL}/api/destination`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
     const destinations = await res.json()
     return {
         props:{

@@ -18,7 +18,7 @@ function DestinationDetails({destination}) {
 }
 DestinationDetails.getLayout = DefaultLayout
 export const  getStaticPaths = async()=>{
-    const res = await fetch(`${process.env.SERVER_URL}/api/destination`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
     const destinations = await res.json()
     const paths = destinations.map(item=>({params:{id: item._id}}))
     return {
@@ -27,7 +27,7 @@ export const  getStaticPaths = async()=>{
     }
 }
 export const getStaticProps = async({params})=>{
-    const res = await fetch(`${process.env.SERVER_URL}/api/destination/${params.id}`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination/${params.id}`)
     const destination = await res.json()
     return {
         props: {

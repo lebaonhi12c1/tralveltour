@@ -6,6 +6,7 @@ import facebookicon from '@/public/images/facebook.png'
 import googleicon from '@/public/images/google.png'
 import Image from 'next/image';
 import logo from '@/public/images/logo.jpg'
+import Loading from '@/components/Loading';
 function Login(props) {
     return (
         <div>
@@ -41,6 +42,7 @@ function Login(props) {
                     </div>
                 </div>
             </div>
+            <Loading/>
         </div>
     );
 }
