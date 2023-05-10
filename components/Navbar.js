@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { GiEarthAmerica } from 'react-icons/gi'
 import { AiOutlineLogin, AiOutlineSearch, AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { BsList } from 'react-icons/bs'
@@ -9,8 +9,11 @@ import logo from '@/public/images/logo.jpg'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { tourNav } from '@/fakedata'
+import { userContext } from '@/context/user';
 function Navbar({ destination }) {
+    const { user, setUser } = useContext(userContext)
     const router = useRouter()
+    const [activeActionUser, setActiveActionUser] = useState(false)
     const [destinations, setDestinations] = useState(null)
     const [tours, setTours] = useState(null)
     const [openMenu, setOpenMenu] = useState(false)
@@ -19,12 +22,13 @@ function Navbar({ destination }) {
     const [openToursDeskop, setOpenTourDesktop] = useState(false)
     const [openDestinationsDeskop, setOpenDestinationsDesktop] = useState(false)
     const [openSearchModal, setOpenSearchModal] = useState(false)
+    const [openProfile,setOpenProfile] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const menuRef = useClickOutSide(() => setOpenMenu(false))
     // ${openMenu && 'bg-white'}
     const getDestinations = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
             const destination = await res.json()
             setDestinations(destination)
         } catch (error) {
@@ -33,26 +37,31 @@ function Navbar({ destination }) {
     }
     const getTours = async () => {
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
+            const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
             const tour = await res.json()
             setTours(tour)
         } catch (error) {
             throw error
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         getDestinations()
         getTours()
-    },[])
+    }, [])
     const handleSetActive = value => {
         return router.pathname.includes(value)
+    }
+    const handleLogout = () => {
+        localStorage.removeItem('user')
+        setUser(null)
+        router.reload()
     }
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm shadow-slate-400`}>
             <div className='max-w-[1536px] h-[80px] p-4 relative mx-auto flex items-center font-bold'>
                 <div className='w-full h-full'>
                     <div className='flex items-center justify-between text-[20px] gap-4 h-full'>
-                        <Link href={'/'} className='flex items-center gap-1 h-full lg:flex-1' title='Website Enjoy Nepal'>
+                        <Link href={'/'} className='flex flex-1 items-center gap-1 h-full lg:flex-1' title='Website Enjoy Nepal'>
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
                                 <Image src={logo} alt='Enjoy Nepal' title='Enjoy Nepal' loading='eager' className=' object-cover' fill={true} />
                             </div>
@@ -72,7 +81,7 @@ function Navbar({ destination }) {
                                     <ul className='bg-white flex flex-col  shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden'>
                                         {destinations?.map(item => (
                                             <li key={item._id}>
-                                                <Link href={`/desinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300'>{item.name}</Link>
+                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300'>{item.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -106,19 +115,41 @@ function Navbar({ destination }) {
                             <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') ? 'text-primary' : 'text-secondary'}`} href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />
                         </ul>
-                        <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
+                        {user ? (
+                            <div className='lg:flex hidden items-center gap-4 relative cursor-pointer flex-1 justify-end' onClick={() => setActiveActionUser(!activeActionUser)}>
+                                <div className='w-[50px] h-[50px] rounded-full overflow-hidden relative' >
+                                    <img
+                                        src={user?.avatar}
+                                        className='object-cover w-full h-full'
+                                        alt='user_image'
+                                    />
+                                </div>
+                                <div className='text-[18px] text-secondary select-none'>{user?.name}</div>
+                                {
+                                    activeActionUser &&
+                                    <div className='absolute top-full right-0 flex flex-col gap-2 bg-white shadow-md shadow-slate-400 w-[200px] rounded-md text-[16px] text-secondary'>
+                                        <div className='p-2 hover:text-primary duration-150' onClick={handleLogout}>
+                                            Logout
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        ) : (
+                            <div className='hidden lg:flex items-center gap-2 flex-1 justify-end'>
 
 
-                            <Link href={'/login'} className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100 text-secondary'>Login</Link>
+                                <Link href={'/login'} className='lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100 text-secondary'>Login</Link>
 
-                            <div className='text-secondary'>/</div>
-                            <Link href={'/register'} className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</Link>
+                                <div className='text-secondary'>/</div>
+                                <Link href={'/register'} className='text-primary lg:text-[18px] lg:tracking-[0.5px] lg:px-1 hover:text-orange-600 hover:scale-105 active:scale-95 duration-100'>Register</Link>
 
-                        </div>
+                            </div>
+                        )}
+
                         {/* end nav in desktop */}
                         {/* nav in mobile */}
                         <div className=' lg:hidden flex items-center gap-4'>
-                            <Link href={'/login'}> <AiOutlineLogin title='Login' className='text-[28px]' /></Link>
+                            {!user && <Link href={'/login'}> <AiOutlineLogin title='Login' className='text-[28px]' /></Link>}
                             <AiOutlineSearch title='Search' className='text-[28px]' onClick={() => setOpenSearchModal(true)} />
                             {!openMenu ? (
                                 <BsList title='List' className='text-[28px]' onClick={() => setOpenMenu(true)} />
@@ -129,7 +160,7 @@ function Navbar({ destination }) {
                         {/* end nav in mobile */}
                     </div>
                     {openMenu && (
-                        <ul className='flex flex-col gap-2 h-fit shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white' ref={menuRef}>
+                        <ul className='flex flex-col gap-2 shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white h-[400px] overflow-y-auto' ref={menuRef}>
                             <li><Link href={'/'} className={`${router.pathname === '/' ? 'text-primary' : 'text-secondary'}`}>Home</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenDestination(!openDestination)}>
@@ -139,9 +170,9 @@ function Navbar({ destination }) {
                                     {openDestination ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openDestination && (
-                                    <ul className=" flex flex-col gap-1 p-4">
-                                        {destinations?.map(item=>(
-                                             <Link href={`/destinations/${item._id}`} key={item._id}>{item.name}</Link>
+                                    <ul className=" flex flex-col gap-1 p-4 h-[200px] overflow-y-auto">
+                                        {destinations?.map(item => (
+                                            <Link href={`/destinations/${item._id}`} key={item._id}>{item.name}</Link>
                                         ))}
                                     </ul>
                                 )}
@@ -155,15 +186,29 @@ function Navbar({ destination }) {
                                     {openTours ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openTours && (
-                                    <ul className=" flex flex-col gap-1 p-4">
-                                        {tours?.map(item=>(
-                                             <Link href={`/tours/${item._id}`} key={item._id}>{item.title}</Link>
+                                    <ul className=" flex flex-col gap-1 p-4 h-[200px] overflow-y-auto">
+                                        {tours?.map(item => (
+                                            <Link href={`/tours/${item._id}`} key={item._id}>{item.title}</Link>
                                         ))}
                                     </ul>
                                 )}
                             </li>
                             <li><Link href={'/blogs'} className={`${handleSetActive('blogs') ? 'text-primary' : 'text-secondary'}`} >Blogs</Link></li>
                             <li><Link href={'/contact'} className={`${handleSetActive('contact') ? 'text-primary' : 'text-secondary'}`} >Contact</Link></li>
+                            {user && (
+
+                                <li className=''>
+                                    <div className='flex items-center justify-between' onClick={() => setOpenProfile(!openProfile)}>
+                                        <div className={`text-secondary`}>
+                                            Profile
+                                        </div>
+                                        {openProfile ? <AiOutlineUp /> : <AiOutlineDown />}
+                                    </div>
+                                    {openProfile && (
+                                        <div className="p-4" onClick={handleLogout}>Logout</div>
+                                    )}
+                                </li>
+                            )}
                         </ul>
                     )}
                     {openSearchModal && (

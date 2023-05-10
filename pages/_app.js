@@ -1,12 +1,15 @@
+import UserContext from '@/context/user'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
   if(Component.getLayout){
     return (
-      <Component.getLayout>
-        <Component {...pageProps} />
-      </Component.getLayout>
+     <UserContext>
+        <Component.getLayout>
+          <Component {...pageProps} />
+        </Component.getLayout>
+     </UserContext>
     )
   }
-  return <Component {...pageProps} />
+  return <UserContext><Component {...pageProps} /></UserContext>
 }

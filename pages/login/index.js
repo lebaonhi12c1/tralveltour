@@ -1,5 +1,5 @@
 import Background from '@/components/Background';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import backgournd from '@/public/images/background2.jpg'
 import Link from 'next/link';
 import facebookicon from '@/public/images/facebook.png'
@@ -7,7 +7,47 @@ import googleicon from '@/public/images/google.png'
 import Image from 'next/image';
 import logo from '@/public/images/logo.jpg'
 import Loading from '@/components/Loading';
+import { useRouter } from 'next/router';
+import { userContext } from '@/context/user';
 function Login(props) {
+    const router = useRouter()
+    const {setUser} = useContext(userContext)
+    const [info,setInfo] = useState(null)
+    const [validate,setValidate] = useState(null)
+    const handleLogin = async()=>{
+        if(!validate){
+            setValidate({
+                email: true,
+                password: true
+            })
+        }
+        if(validate?.email || validate?.password){
+            return
+        }
+        try {
+            const res= await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/auth/login`,{
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(info)
+            })
+            const data = await res.json()
+            if(data.success){
+               
+                alert(data.message)
+                localStorage.setItem('user',JSON.stringify(data))
+                setUser(data)
+                router.push('/')
+            }
+            else{
+                alert(data.message)
+            }
+           
+        } catch (error) {
+            throw error
+        }
+    }
     return (
         <div>
             <Background url={backgournd} />
@@ -19,15 +59,18 @@ function Login(props) {
                     <div className='flex flex-col gap-4 w-full'>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="email" className='font-bold'>Email:</label>
-                            <input type="email" name="email" id="email" className='border border-slate-400 rounded-sm py-1 px-2' placeholder='Enter your email...' />
+                            <input type="email" name="email" id="email" className={`border rounded-sm py-1 px-2 ${validate?.email ? 'border-red-500': 'border-slate-500'}`} placeholder='Enter your email...' onBlur={e=>e.target.value === '' && setValidate({...validate,email:true})} onKeyDown={()=>setValidate({...validate,email:false})} onChange={e=>setInfo({...info,email:e.target.value})} />
+                            {validate?.email && <span className='text-red-500'>Your must type email!</span>}
+                            
                         </div>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="password" className='font-bold'>Password:</label>
-                            <input type="password" name="password" id="password" className='border border-slate-400 rounded-sm py-1 px-2' placeholder='Enter your password...' />
+                            <input type="password" name="password" id="password" className={`border rounded-sm py-1 px-2 ${validate?.password ? 'border-red-500': 'border-slate-500'}`} placeholder='Enter your password...' onBlur={e=>e.target.value === '' && setValidate({...validate,password:true})} onKeyDown={()=>setValidate({...validate,password:false})} onChange={e=>setInfo({...info,password:e.target.value})} />
+                            {validate?.password && <span className='text-red-500'>Your must type password!</span>}
                         </div>
                     </div>
                     <Link href={'#'} className='font-bold text-[12px] text-secondary'>Forgot your password?</Link>
-                    <button className='py-2 hover:scale-105 active:scale-90 text-white bg-secondary rounded-sm text-center w-full duration-150'>Login</button>
+                    <button className='py-2 hover:scale-105 active:scale-90 text-white bg-secondary rounded-sm text-center w-full duration-150' onClick={handleLogin}>Login</button>
                     <div className='flex flex-col items-center gap-4'>
                         <div>Enjoy Nepal</div>
                         <Link href={'/'} className='relative w-[100px] h-[100px]'>
