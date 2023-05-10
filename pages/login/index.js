@@ -9,7 +9,9 @@ import logo from '@/public/images/logo.jpg'
 import Loading from '@/components/Loading';
 import { useRouter } from 'next/router';
 import { userContext } from '@/context/user';
+import LazyLoad from '@/components/LazyLoad';
 function Login(props) {
+    const [loading,setLoading] = useState(false)
     const router = useRouter()
     const {setUser} = useContext(userContext)
     const [info,setInfo] = useState(null)
@@ -25,6 +27,7 @@ function Login(props) {
             return
         }
         try {
+            setLoading(true)
             const res= await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/auth/login`,{
                 method: 'post',
                 headers: {
@@ -34,7 +37,7 @@ function Login(props) {
             })
             const data = await res.json()
             if(data.success){
-               
+               setLoading(false)
                 alert(data.message)
                 localStorage.setItem('user',JSON.stringify(data))
                 setUser(data)
@@ -86,6 +89,7 @@ function Login(props) {
                 </div>
             </div>
             <Loading/>
+            <LazyLoad isOpen={loading}/>
         </div>
     );
 }
