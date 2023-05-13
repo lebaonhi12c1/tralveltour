@@ -10,7 +10,7 @@ import Image from "next/image";
 function CardTour({ value }) {
   return (
     <Link href={`/tours/${value._id}`} className="">
-      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400 h-[462px] w-[315px]">
+      <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400 h-[462px]">
         <div className="h-[200px] relative">
           <div className="w-full h-full overflow-hidden relative">
             <Image

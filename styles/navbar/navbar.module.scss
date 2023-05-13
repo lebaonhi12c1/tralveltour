@@ -1,0 +1,14 @@
+.destination_parent{
+    transition-duration: 200ms;
+    &:hover .destination_modal{
+        display: flex;
+        transition-duration: 200ms;
+    }
+}
+.tour_parent{
+    transition-duration: 200ms;
+    &:hover .tour_modal{
+        display: grid;
+        transition-duration: 200ms;
+    }
+}

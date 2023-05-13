@@ -10,6 +10,8 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { tourNav } from '@/fakedata'
 import { userContext } from '@/context/user';
+import styled from  '@/styles/navbar/navbar.module.scss'
+import classNames from 'classnames';
 function Navbar({ destination }) {
     const { user, setUser } = useContext(userContext)
     const router = useRouter()
@@ -72,29 +74,36 @@ function Navbar({ destination }) {
                             <li title='Home'>
                                 <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' ? 'text-primary' : 'text-secondary'}`} href={'/'}>Home</Link>
                             </li>
-                            <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className='relative'>
+                            <li title='Destinations' onMouseEnter={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} onMouseLeave={() => handleHover(setOpenDestinationsDesktop, openDestinationsDeskop)} className={classNames(styled.destination_parent,'relative')}>
                                 <div className='flex items-center gap-2 lg:hover:text-orange-600'>
                                     <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('destinations') ? 'text-primary' : 'text-secondary'}`} href={'/destinations'}>Destinations</Link>
                                     {!openDestinationsDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
-                                {openDestinationsDeskop && (
-                                    <ul className='bg-white flex flex-col  shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden'>
+                                {/* {openDestinationsDeskop && (
+                                    <ul className='bg-white flex flex-col  shadow-md shadow-gray-300 absolute top-full w-[200px] rounded-md overflow-hidden destination_modal'>
                                         {destinations?.map(item => (
                                             <li key={item._id}>
                                                 <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300'>{item.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
-                                )}
+                                )} */}
+                                 <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[200px] rounded-md overflow-hidden destination_modal')}>
+                                        {destinations?.map(item => (
+                                            <li key={item._id}>
+                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300'>{item.name}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
                             </li>
-                            <li title='Tours' className='relative' onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
+                            <li title='Tours' className={classNames(styled.tour_parent,'relative')} onMouseEnter={() => handleHover(setOpenTourDesktop, openToursDeskop)} onMouseLeave={() => handleHover(setOpenTourDesktop, openToursDeskop)}>
                                 <div className='flex items-center gap-2 lg:hover:text-orange-600'>
                                     <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('tours') ? 'text-primary' : 'text-secondary'}`} href={'/tours'}>
                                         Tours
                                     </Link>
                                     {!openToursDeskop ? <AiOutlineDown className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" /> : <AiOutlineUp className="lg:ml-[-5px] lg:text-[14px] lg:mt-[1px] cursor-pointer hover:text-orange-600" />}
                                 </div>
-                                {openToursDeskop && (
+                                {/* {openToursDeskop && (
                                     <ul className='bg-white grid grid-cols-4 gap-4 shadow-md shadow-slate-500 absolute top-full w-[630px] p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2'>
                                         {destinations?.map((item, index) => (
                                             <div key={index} className='flex flex-col gap-2'>
@@ -107,8 +116,19 @@ function Navbar({ destination }) {
                                             </div>
                                         ))}
                                     </ul>
-                                )}
-
+                                )} */}
+                                <ul className={classNames(styled.tour_modal,'bg-white hidden grid-cols-4 gap-4 shadow-md shadow-slate-500 absolute top-full w-fit p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2')}>
+                                        {destinations?.map((item, index) => (
+                                            <div key={index} className='flex flex-col gap-2'>
+                                                <div className="font-bold text-[16px]">{item.name}</div>
+                                                <ul className='flex flex-col gap-2'>
+                                                    {item.tours.map((item, index) => (
+                                                        <Link href={`/tours/${item._id}`} className="font-medium text-[14px] hover:text-primary" key={index}>{item.title}</Link>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </ul>
                             </li>
                             <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') ? 'text-primary' : 'text-secondary'}`} href={'/about'}>About us</Link></li>
                             <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') ? 'text-primary' : 'text-secondary'}`} href={'/blogs'}>Blogs</Link></li>
