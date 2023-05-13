@@ -63,9 +63,9 @@ function Navbar({ destination }) {
             <div className='max-w-[1536px] h-[80px] p-4 relative mx-auto flex items-center font-bold'>
                 <div className='w-full h-full'>
                     <div className='flex items-center justify-between text-[20px] gap-4 h-full'>
-                        <Link href={'/'} className='flex flex-1 items-center gap-1 h-full lg:flex-1' title='Website Enjoy Nepal'>
+                        <Link href={'/'} className='flex flex-1 items-center gap-1 h-full lg:flex-1' title='Website Top Nepal'>
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
-                                <Image src={logo} alt='Enjoy Nepal' title='Enjoy Nepal' loading='eager' className=' object-cover' fill={true} />
+                                <Image src={logo} alt='Top Nepal' title='Top Nepal' loading='eager' className=' object-cover' fill={true} />
                             </div>
 
                         </Link>
@@ -132,7 +132,7 @@ function Navbar({ destination }) {
                                         <Link href={'/tours'} className='text-[16px] text-primary hover:text-secondary'>All tours</Link>
                                     </ul>
                             </li>
-                            <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') ? 'text-primary' : 'text-secondary'}`} href={'/about'}>About us</Link></li>
+                            <li title='about Top Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') ? 'text-primary' : 'text-secondary'}`} href={'/about'}>About us</Link></li>
                             <li title='Blogs'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('blogs') ? 'text-primary' : 'text-secondary'}`} href={'/blogs'}>Blogs</Link></li>
                             <li title='Contact'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('contact') ? 'text-primary' : 'text-secondary'}`} href={'/contact'}>Contact</Link></li>
                             <AiOutlineSearch className='text-[30px] hover:text-orange-600 active:scale-95 cursor-pointer' onClick={() => setOpenSearchModal(true)} />

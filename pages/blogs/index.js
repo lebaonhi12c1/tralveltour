@@ -24,7 +24,7 @@ function Blogs({blogs}) {
             <div className="flex flex-col lg:flex-row gap-4 lg:h-[600px]">
               <div className="flex flex-col gap-4 justify-center items-center lg:flex-1 py-10">
                 <h5
-                  title="blog of Enjoy Nepal"
+                  title="blog of Top Nepal"
                   className="font-bold text-[24px] text-center text-primary lg:text-[40px] "
                 >
                   WELCOME TO

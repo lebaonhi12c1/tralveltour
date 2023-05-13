@@ -65,21 +65,21 @@ export default function Home({destination,tour}) {
               <div className="h-[300px] lg:flex-1 lg:h-[455px]">
                 <Image
                   src={homeBackground}
-                  alt={"Enjoy Nepal"}
-                  title="Enjoy Nepal"
+                  alt={"Top Nepal"}
+                  title="Top Nepal"
                   loading="eager"
                   className=" w-full h-full object-cover"
                 />
               </div>
               <div className="bg-primary flex gap-4 lg:gap-5 flex-col items-center justify-center p-6 lg:flex-1 lg:h-[455px]">
                 <h5
-                  title="Infomation about Enjoy Nepal"
+                  title="Infomation about Top Nepal"
                   className="italic text-[32px] sm:font-bold lg:text-[48px] lg:tracking-[1.75px] lg:font-[700] text-secondary"
                 >
                   About us
                 </h5>
                 <p
-                  title="Infomation about Enjoy Nepal"
+                  title="Infomation about Top Nepal"
                   className="text-[16px] lg:text-[19.25px] lg:font-[500] lg:tracking-[0.55px] text-center lg:w-[480px] text-white"
                 >
                   I’m a paragraph. Double click here or click Edit Text to add

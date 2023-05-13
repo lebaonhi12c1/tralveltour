@@ -143,14 +143,14 @@ function Register(props) {
                     </div>
                     <button className='py-2 hover:scale-105 active:scale-90 text-white bg-secondary rounded-sm text-center w-full duration-150' onClick={handleRegister}>Register</button>
                     <div className='flex flex-col items-center gap-4'>
-                        <div>Enjoy Nepal</div>
+                        <div>Top Nepal</div>
                         <Link href={'/'} className='relative w-[100px] h-[100px]'>
                             <Image
                                 src={logo}
                                 className='object-cover'
                                 fill={true}
                                 alt='logo'
-                                title='enjoy nepal'
+                                title='Top Nepal'
                             />
                         </Link>
                     </div>

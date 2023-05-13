@@ -21,7 +21,7 @@ function Tours({tours}) {
         <div className="bg-white py-10">
           <div className="root-container">
             <main
-              title="All tour from Enjoy Nepal"
+              title="All tour from Top Nepal"
               className="flex flex-col gap-10"
             >
               <div  className="lg:grid-cols-3 grid-cols-1 gap-[40px] grid">

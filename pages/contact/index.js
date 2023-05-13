@@ -17,7 +17,7 @@ function Contact(props) {
                 <div className = 'root-container'>
                     <div className='flex flex-col lg:flex-row gap-4 lg:gap-6'>
                         <div className='relative h-[280px] lg:w-full lg:flex-1 rounded-md overflow-hidden'>
-                            <Image src={background2} fill={true} title='Enjoy Nepal Treck' alt='Enjoy Nepal Treck' className='object-cover'/>
+                            <Image src={background2} fill={true} title='Top Nepal Treck' alt='Top Nepal Treck' className='object-cover'/>
                         </div>
                         <div className = 'flex flex-col gap-4 lg:flex-1'>
                             <h5 className='text-secondary text-[24px]'>
