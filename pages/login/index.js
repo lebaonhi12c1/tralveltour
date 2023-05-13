@@ -44,11 +44,18 @@ function Login(props) {
                 router.push('/')
             }
             else{
+                setLoading(false)
                 alert(data.message)
             }
            
         } catch (error) {
+            setLoading(false)
             throw error
+        }
+    }
+    const handleLoginKeyDown = e=>{
+        if(e.key==='Enter'){
+            handleLogin()
         }
     }
     return (
@@ -68,7 +75,7 @@ function Login(props) {
                         </div>
                         <div className='flex flex-col gap-2'>
                             <label htmlFor="password" className='font-bold'>Password:</label>
-                            <input type="password" name="password" id="password" className={`border rounded-sm py-1 px-2 ${validate?.password ? 'border-red-500': 'border-slate-500'}`} placeholder='Enter your password...' onBlur={e=>e.target.value === '' && setValidate({...validate,password:true})} onKeyDown={()=>setValidate({...validate,password:false})} onChange={e=>setInfo({...info,password:e.target.value})} />
+                            <input type="password" name="password" id="password" className={`border rounded-sm py-1 px-2 ${validate?.password ? 'border-red-500': 'border-slate-500'}`} placeholder='Enter your password...' onBlur={e=>e.target.value === '' && setValidate({...validate,password:true})} onKeyDown={()=>setValidate({...validate,password:false})} onChange={e=>setInfo({...info,password:e.target.value})} onKeyUp={handleLoginKeyDown} />
                             {validate?.password && <span className='text-red-500'>Your must type password!</span>}
                         </div>
                     </div>

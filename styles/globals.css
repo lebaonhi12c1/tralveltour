@@ -34,6 +34,12 @@ input:focus-visible{
 .center-element{
   margin-top: var(--navheight);
 }
+
+.clamp_1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
 @media (max-width: 1023px) {
   .root-container{
     width: 980px;

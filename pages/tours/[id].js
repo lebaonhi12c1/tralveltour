@@ -66,21 +66,21 @@ function TourDetail({ tour }) {
                 </div>
               </div>
               <div className="flex flex-col gap-6 lg:flex-row-reverse lg:items-start">
-                <div className="flex flex-col justify-center gap-4">
+                <div className="flex lg:flex-1 flex-col justify-center gap-4">
                   {/* border border-[#666ec9] */}
                   <div
                     className="grid grid-cols-2 lg:flex-1 p-4 gap-4 rounded-md  lg:h-fit lg:grow-0 shadow-lg shadow-slate-300"
                   >
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
-                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
+                      <div className="flex flex-col lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <SlPlane />
-                        <div className=" text-secondary whitespace-nowrap">
+                        <div className=" w-full text-secondary clamp_1">
                           {tour.title}
                         </div>
                       </div>
                     </div>
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
-                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
+                      <div className="flex flex-col  lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <GiRank3 />
                         <div className=" text-secondary whitespace-nowrap">
                           Level:
@@ -89,7 +89,7 @@ function TourDetail({ tour }) {
                       </div>
                     </div>
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
-                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
+                      <div className="flex flex-col  lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <FiUsers />
                         <div className=" text-secondary whitespace-nowrap">
                           Max People:
@@ -98,7 +98,7 @@ function TourDetail({ tour }) {
                       </div>
                     </div>
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
-                      <div className="flex flex-col lg:flex-row lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] ">
+                      <div className="flex flex-col  lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <RiEmotionHappyLine />
                         <div className="text-secondary whitespace-nowrap">Age:</div>
                         <div className=" whitespace-nowrap">
@@ -190,12 +190,12 @@ function TourDetail({ tour }) {
                 </button>
                 </div>
              )}
-              <select name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow select-none hover:cursor-pointer shadow-slate-400'>
-                <option value=""  className="hover:cursor-pointer"selected>Filter comments</option>
-                <option value="" className="hover:cursor-pointer">value</option>
-                <option value="" className="hover:cursor-pointer">value</option>
-                <option value="" className="hover:cursor-pointer">value</option>
-                <option value="" className="hover:cursor-pointer">value</option>
+              <select defaultValue={'value1'} name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow select-none hover:cursor-pointer shadow-slate-400'>
+                <option value="value 1"  className="hover:cursor-pointer"selected>Filter comments</option>
+                <option value="value 2" className="hover:cursor-pointer">value</option>
+                <option value="value 3" className="hover:cursor-pointer">value</option>
+                <option value="value 4" className="hover:cursor-pointer">value</option>
+                <option value="value 5" className="hover:cursor-pointer">value</option>
               </select>
             </div>
             <div className="root-container">

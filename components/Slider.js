@@ -45,7 +45,7 @@ function Slider({ type,value }) {
     <div>
       <div className="hidden lg:block">
         <Swiper
-          centeredSlides={data.length < 3 ?true :false}
+          centeredSlides={data.length < 2 ?true :false}
           modules={[Navigation, Autoplay]}
           navigation
           autoplay={{

@@ -68,7 +68,7 @@ function Tours({tours}) {
   );
 }
 
-export const getStaticProps = async()=>{
+export const getServerSideProps = async()=>{
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
   const tours = await res.json()
   return {
