@@ -26,14 +26,13 @@ function CardTour({ value }) {
             <div className="text-white italic">{value.title}</div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
-                {Array(Math.ceil(value.rating))
-                  .fill()
-                  .map((item) => (
+                {
+                  Array(value.rating).fill().map((item) => (
                     <AiFillStar className=" text-yellow-500" key={uuidv4()} />
                   ))}
               </div>
               <div className=" italic text-slate-300">
-                ({value.rating.toFixed(1)} / Rating)
+                    {value.rating}/Rating
               </div>
             </div>
           </div>
