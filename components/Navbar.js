@@ -88,10 +88,10 @@ function Navbar({ destination }) {
                                         ))}
                                     </ul>
                                 )} */}
-                                 <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[200px] rounded-md overflow-hidden destination_modal')}>
+                                 <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[250px] rounded-md overflow-hidden destination_modal')}>
                                         {destinations?.map(item => (
                                             <li key={item._id}>
-                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300'>{item.name}</Link>
+                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300 clamp_1'>{item.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -129,6 +129,7 @@ function Navbar({ destination }) {
                                                 </ul>
                                             </div>
                                         ))}
+                                        <Link href={'/tours'} className='text-[16px] text-primary hover:text-secondary'>All tours</Link>
                                     </ul>
                             </li>
                             <li title='about Enjoy Nepal'><Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${handleSetActive('about') ? 'text-primary' : 'text-secondary'}`} href={'/about'}>About us</Link></li>
