@@ -232,17 +232,17 @@ function TourDetail({ tour }) {
   );
 }
 TourDetail.getLayout = DefaultLayout;
-export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/publish`)
-  const tours = await res.json()
+// export async function getStaticPaths() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/publish`)
+//   const tours = await res.json()
   
-  const paths = tours.map(item=>({params:{id: item._id}}))
-  return {
-    paths,
-    fallback: false,
-  };
-}
-export async function getStaticProps({ params }) {
+//   const paths = tours.map(item=>({params:{id: item._id}}))
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
+export async function getServerSideProps({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/${params.id}`)
   const tour = await res.json()
   return {
