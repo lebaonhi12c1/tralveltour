@@ -22,7 +22,7 @@ function DestinationDetails({ destination }) {
                                         {destination.tours.map((item, index) => {
                                             return (
                                                 reponsive ? (
-                                                    index < 4 && (
+                                                    index < 4 && item.status==='published' && (
                                                         (
                                                             <div
                                                                 className=" flex items-center justify-center"
@@ -33,7 +33,7 @@ function DestinationDetails({ destination }) {
                                                         )
                                                     )
                                                 ) : (
-                                                    index < 9 && (
+                                                    index < 9 && item.status==='published' && (
                                                         (
                                                             <div
                                                                 className=" flex items-center justify-center"
