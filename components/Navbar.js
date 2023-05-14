@@ -60,9 +60,12 @@ function Navbar({ destination }) {
     }
     const handleSearch = (e)=>{
         if(e.key === 'Enter'){
-            setOpenSearchModal(false)
-            router.push(`/search?value=${searchValue}`)
+          handleSearchAction()
         }
+    }
+    const handleSearchAction = ()=>{
+        setOpenSearchModal(false)
+        router.push(`/search?value=${searchValue}`)
     }
     return (
         <div className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-sm shadow-slate-400`}>
@@ -244,7 +247,7 @@ function Navbar({ destination }) {
                         <div className="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex items-center justify-center">
                             <div className='bg-white flex items-center rounded-md overflow-hidden focus-within:border-[2px] focus-within:border-blue-500'>
                                 <input type="search" value={searchValue} onChange={e => setSearchValue(e.target.value)} className='p-2 lg:p-4 lg:w-[400px]' spellCheck={false} placeholder='Search now...' onKeyDown={handleSearch} />
-                                <button className="h-full p-2 lg:p-4 bg-blue-500" onClick={handleSearch}>
+                                <button className="h-full p-2 lg:p-4 bg-blue-500" onClick={handleSearchAction}>
                                     <AiOutlineSearch className='text-[28px] text-white' />
                                 </button>
                             </div>
