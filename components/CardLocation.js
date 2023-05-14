@@ -3,7 +3,6 @@ import React from 'react';
 import { AiOutlineAccountBook, AiOutlineArrowRight } from 'react-icons/ai';
 import {HiLocationMarker}from 'react-icons/hi'
 function CardLocation({value}) {
-    console.log(value)
     return (
         <div className='flex flex-col gap-4'>
             <div className='items-center hidden lg:flex justify-between'>

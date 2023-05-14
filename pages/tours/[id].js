@@ -190,13 +190,13 @@ function TourDetail({ tour }) {
                 </button>
                 </div>
              )}
-              <select defaultValue={'value1'} name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow select-none hover:cursor-pointer shadow-slate-400'>
+              {/* <select defaultValue={'value1'} name="comment" id="comment" className='w-[280px] p-2 rounded-sm shadow select-none hover:cursor-pointer shadow-slate-400'>
                 <option value="value 1"  className="hover:cursor-pointer"selected>Filter comments</option>
                 <option value="value 2" className="hover:cursor-pointer">value</option>
                 <option value="value 3" className="hover:cursor-pointer">value</option>
                 <option value="value 4" className="hover:cursor-pointer">value</option>
                 <option value="value 5" className="hover:cursor-pointer">value</option>
-              </select>
+              </select> */}
             </div>
             <div className="root-container">
                <div className="flex flex-col gap-10 py-[60px]">
@@ -233,7 +233,7 @@ function TourDetail({ tour }) {
 }
 TourDetail.getLayout = DefaultLayout;
 export async function getStaticPaths() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/publish`)
   const tours = await res.json()
   
   const paths = tours.map(item=>({params:{id: item._id}}))

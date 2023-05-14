@@ -26,7 +26,7 @@ function Destinations({destinations}) {
 }
 
 export const getServerSideProps = async()=>{
-    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination/publish`)
     const destinations = await res.json()
     return {
         props:{

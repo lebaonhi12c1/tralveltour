@@ -102,9 +102,9 @@ export default function Home({destination,tour}) {
 }
 
 export const getServerSideProps = async()=>{
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/destination/publish`)
   const destination = await res.json()
-  const restour= await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour`)
+  const restour= await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/publish`)
   const tour = await restour.json()
 
   return {

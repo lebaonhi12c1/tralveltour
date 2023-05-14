@@ -82,7 +82,7 @@ function Slider({ type,value }) {
         >
           {data.map((item,index) => (
             <SwiperSlide key={uuidv4()}>
-              <Card value={item} />
+             <div className="flex justify-center"> <Card value={item} /></div>
             </SwiperSlide>
           ))}
         </Swiper>

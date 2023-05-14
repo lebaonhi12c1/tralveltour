@@ -68,7 +68,7 @@ function Blogs({blogs}) {
 }
 
 export const getServerSideProps = async ()=>{
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/blog`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/blog/publish`)
   const blogs = await res.json()
   return {
     props: {
