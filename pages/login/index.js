@@ -10,6 +10,7 @@ import Loading from '@/components/Loading';
 import { useRouter } from 'next/router';
 import { userContext } from '@/context/user';
 import LazyLoad from '@/components/LazyLoad';
+import logotopnepal from '@/public/images/logotopnepal.jpg'
 function Login(props) {
     const [loading,setLoading] = useState(false)
     const router = useRouter()
@@ -85,7 +86,7 @@ function Login(props) {
                         <div>Top Nepal</div>
                         <Link href={'/'} className='relative w-[100px] h-[100px]'>
                             <Image
-                                src={logo}
+                                src={logotopnepal}
                                 className='object-cover'
                                 fill={true}
                                 alt='logo'

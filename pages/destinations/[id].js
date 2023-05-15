@@ -7,7 +7,6 @@ import React from 'react';
 
 function DestinationDetails({ destination }) {
     const reponsive = getReponsive()
-    console.log(destination.tours)
     return (
         <div className=''>
             <div className='center-element'>

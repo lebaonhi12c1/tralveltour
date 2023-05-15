@@ -6,6 +6,7 @@ import { CiCircleRemove } from 'react-icons/ci'
 import Link from 'next/link';
 import { handleHover, useClickOutSide } from '@/globalfuntions';
 import logo from '@/public/images/logo.jpg'
+import logotopnepal from '@/public/images/logotopnepal.jpg'
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { tourNav } from '@/fakedata'
@@ -74,7 +75,7 @@ function Navbar({ destination }) {
                     <div className='flex items-center justify-between text-[20px] gap-4 h-full'>
                         <Link href={'/'} className='flex flex-1 items-center gap-1 h-full lg:flex-1' title='Website Top Nepal'>
                             <div className='w-[80px] h-[80px] relative z-[100px]'>
-                                <Image src={logo} alt='Top Nepal' title='Top Nepal' loading='eager' className=' object-cover' fill={true} />
+                                <Image src={logotopnepal} alt='Top Nepal' title='Top Nepal' loading='eager' className=' object-cover' fill={true} />
                             </div>
 
                         </Link>

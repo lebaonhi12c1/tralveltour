@@ -7,7 +7,7 @@ import Letter from "@/components/Letter";
 function About(props) {
   return (
     <div>
-      <Background url={goldbackground} />
+      {/* <Background url={goldbackground} /> */}
       <div className="center-element">
         <Hero type={"destination"} heading={"About us"} />
         <div className="bg-white py-[40px] lg:py-[60px] flex flex-col gap-10">

@@ -11,7 +11,7 @@ function Tours({tours}) {
   const reponsive = getReponsive()
   return (
     <div>
-      <Background url={tourBackground} />
+      {/* <Background url={tourBackground} /> */}
       <div className="center-element">
         <Hero
           type={"tour"}

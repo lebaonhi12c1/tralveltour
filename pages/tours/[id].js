@@ -1,7 +1,7 @@
 import Background from "@/components/Background";
 import { tours, userComments } from "@/fakedata";
 import DefaultLayout from "@/layout/DefaultLayout";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import tourdetaibackground from "@/public/images/background3.jpg";
 import Hero from "@/components/Hero";
 import { SlPlane } from "react-icons/sl";
@@ -16,27 +16,101 @@ import {FaFacebookF,FaInstagram} from 'react-icons/fa'
 import {BsTwitter} from 'react-icons/bs'
 import ContactFrom from "@/components/ContactFrom";
 import Image from "next/image";
-function TourDetail({ tour }) {
+import { userContext } from "@/context/user";
+import LazyLoad from "@/components/LazyLoad";
+function TourDetail({ tour,reviews }) {
+  const {user} = useContext(userContext)
+  const [evalute,setEvalute] = useState({
+    comment: '',
+    countStar: 0,
+  })
+  const [reviewlist,setReviewlist]= useState(reviews.data)
+  const [feedback,setFeeback] = useState({
+    loading: false,
+    notification: false,
+    success: false,
+    message: ''
+  })
   const [view, setView] = useState(1);
-  const [countStar, setcountStar] = useState(-1);
   const [openComent, setopenComent] = useState(false);
   const reponsive = getReponsive(); 
+  const getReview = async()=>{
+    try {
+      const resview = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review/getreviewoftour/${tour._id}`)
+      const reviews = await resview.json()
+      setReviewlist(reviews.data)
+    } catch (error) {
+      throw error
+    }
+  }
   const getEvalue = () => {
-    switch (countStar) {
-      case 4:
+    switch (evalute.countStar) {
+      case 5:
         return "Very good";
-      case 3:
+      case 4:
         return "Good";
-
+        case 1:
+          return "Very bad";
       case 2:
+        return "Bad";
+        case 3:
         return "Medium";
       default:
         return "Bad";
     }
   };
+  const handleApplyComemt = async ()=>{
+    setFeeback({...feedback,loading: true})
+    if(user?.access_token_client){
+      if(evalute.countStar > -1 && evalute.comment !== ''){
+        try {
+          const res= await fetch (`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review`,{
+            method: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+            ,
+            body: JSON.stringify({
+              tourId: tour._id,
+              customerId: user._id,
+              comment: evalute.comment,
+              rating: evalute.countStar,
+              access_token_client: user.access_token_client
+            })
+          })
+          if(res.status ===200){
+            setFeeback({loading: false,notification: true,message: 'Success!',success: true})
+            alert('Success!')
+            getReview()
+          }
+          if(res.status ===400){
+            setFeeback({loading: false,notification: true,message: 'Fail!',success: true})
+            alert('token invalid')
+          }
+          if(res.status !== 400 && res.status !== 200){
+            setFeeback({loading: false,notification: true,message: 'Fail!',success: true})
+            alert('Fail!')
+          }
+        } catch (error) {
+          setFeeback({loading: false,notification: true,message: 'Fail!',success: true})
+          alert(feedback.message)
+          throw error
+        }
+      }
+      else{
+        setFeeback({...feedback,loading: false})
+        alert('Your must choose count start and type your comment!')
+      }
+    }
+    else{
+      setFeeback({...feedback,loading: false})
+      alert('Your must be login!')
+    }
+  }
+
   return (
     <div>
-      <Background url={tourdetaibackground} />
+      {/* <Background url={tourdetaibackground} /> */}
       <div className="center-element">
         <main>
           <Hero
@@ -167,10 +241,10 @@ function TourDetail({ tour }) {
                   .map((item, index) => (
                     <div
                       className=" text-yellow-500"
-                      onClick={() => setcountStar(index)}
+                      onClick={() => setEvalute({...evalute,countStar: index+1})}
                       key={index}
                     >
-                      {index <= countStar ? <AiFillStar className="hover:scale-110 active:scale-95 duration-100"/> : <AiOutlineStar className="hover:scale-105 hover:text-orange-500 active:scale-95 duration-100"/>}
+                      {index < evalute.countStar ? <AiFillStar className="hover:scale-110 active:scale-95 duration-100"/> : <AiOutlineStar className="hover:scale-105 hover:text-orange-500 active:scale-95 duration-100"/>}
                     </div>
                   ))}
               </div>
@@ -183,9 +257,10 @@ function TourDetail({ tour }) {
                  <input
                    type="text"
                    placeholder="Enter your comment..."
-                   className="w-[300px] border border-slate-200 rounded-lg py-3 px-6 outline-none  bg-transparent"
+                   className="w-[300px] lg:w-[500px] border border-slate-200 rounded-lg py-3 px-6 outline-none  bg-transparent"
+                   onChange={e=>setEvalute({...evalute,comment: e.target.value})}
                  />
-                 <button className="inline-flex items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-500 rounded-lg h-[40px]">
+                 <button className="inline-flex items-center justify-center px-8 py-4 font-sans font-semibold tracking-wide text-white bg-blue-500 rounded-lg h-[40px]" onClick={handleApplyComemt}>
                     Apply
                 </button>
                 </div>
@@ -200,7 +275,7 @@ function TourDetail({ tour }) {
             </div>
             <div className="root-container">
                <div className="flex flex-col gap-10 py-[60px]">
-                    {userComments.map((item,index)=>(
+                    {reviewlist.map((item,index)=>(
                         <CardUserComent value={item} key={index} />
                     ))}
                </div>
@@ -228,6 +303,7 @@ function TourDetail({ tour }) {
           </div>
         </main>
       </div>
+      <LazyLoad isOpen={feedback.loading}/>
     </div>
   );
 }
@@ -244,10 +320,13 @@ TourDetail.getLayout = DefaultLayout;
 // }
 export async function getServerSideProps({ params }) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/${params.id}`)
+  const resview = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review/getreviewoftour/${params.id}`)
   const tour = await res.json()
+  const reviews = await resview.json()
   return {
     props: {
       tour,
+      reviews,
     },
   };
 }

@@ -9,6 +9,7 @@ import logo from '@/public/images/logo.jpg'
 import Loading from '@/components/Loading';
 import LazyLoad from '@/components/LazyLoad';
 import { useRouter } from 'next/router';
+import logotopnepal from '@/public/images/logotopnepal.jpg'
 // {
 //     fullname: '',
 //     phone: '',
@@ -146,7 +147,7 @@ function Register(props) {
                         <div>Top Nepal</div>
                         <Link href={'/'} className='relative w-[100px] h-[100px]'>
                             <Image
-                                src={logo}
+                                src={logotopnepal}
                                 className='object-cover'
                                 fill={true}
                                 alt='logo'

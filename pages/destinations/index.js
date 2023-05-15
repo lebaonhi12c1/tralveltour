@@ -5,10 +5,9 @@ import  goldbackground  from '@/public/images/goldbackground.jpg';
 import Hero from './../../components/Hero';
 import CardLocation from '@/components/CardLocation';
 function Destinations({destinations}) {
-    console.log(destinations)
     return (
         <div className=''>
-            <Background url={goldbackground}/>
+            {/* <Background url={goldbackground}/> */}
             <div className="center-element">
                 <Hero type={'destination'} heading={'Location'}/>
                 <div className="bg-white py-[60px]">

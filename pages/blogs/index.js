@@ -8,11 +8,10 @@ import Image from 'next/image';
 import CardBlog from "@/components/CardBlog";
 import Paging from "@/components/Paging";
 function Blogs({blogs}) {
-  console.log(blogs)
   const reponsive = getReponsive()
   return (
     <div className="center-element">
-      <Background url={goldbackground} />
+      {/* <Background url={goldbackground} /> */}
       <div>
         <Hero
           type={"blog"}

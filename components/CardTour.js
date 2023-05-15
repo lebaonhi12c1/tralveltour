@@ -17,7 +17,8 @@ function CardTour({ value }) {
               src={value.image}
               alt={value.title}
               title={value.title}
-              loading="eager"
+              loading="lazy"
+            
               className="w-full h-full object-cover hover:scale-110 duration-200"
               fill={true}
             />
@@ -54,7 +55,7 @@ function CardTour({ value }) {
           title={value.title}
           className="flex items-center justify-center gap-1 text-[19px] mt-[44px]"
         >
-          <span className="text-red-500">{value.price}$</span>
+          <span className="text-red-500">${value.price}</span>
           <span className="text-secondary p-2">/</span>
           <span className="text-secondary">Person</span>
         </h5>

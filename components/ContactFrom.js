@@ -34,7 +34,6 @@ function ContactFrom(props) {
                 })
             })
             const data = await res.json()
-            console.log(data)
             setLoading(false)
         } catch (error) {
             setLoading(false)

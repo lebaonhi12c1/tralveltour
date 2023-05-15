@@ -32,11 +32,11 @@ function SearchPage(props) {
   }, [router.query])
   return (
     <div>
-      <Background url={tourBackground} />
+      {/* <Background url={tourBackground} /> */}
       <div className="center-element">
         <Hero
           type={"destination"}
-          heading={"I looking for a tour"}
+          heading={"I'm looking for a tour"}
         />
         <div className="bg-white py-10">
           <div className="root-container">

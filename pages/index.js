@@ -13,11 +13,12 @@ import Slider from "@/components/Slider";
 import Image from "next/image";
 import ContactFrom from "@/components/ContactFrom";
 import Link from 'next/link'
+import nepalbackground from '@/public/images/nepalbackground.jpg'
 export default function Home({destination,tour}) {
   return (
     <>
       <main>
-        <Background url={background2} />
+        {/* <Background url={nepalbackground} /> */}
         <div className="center-element">
           <Hero
             type='home'
