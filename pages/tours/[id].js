@@ -62,7 +62,7 @@ function TourDetail({ tour,reviews }) {
   const handleApplyComemt = async ()=>{
     setFeeback({...feedback,loading: true})
     if(user?.access_token_client){
-      if(evalute.countStar > -1 && evalute.comment !== ''){
+      if(evalute.countStar > 0 && evalute.comment !== ''){
         try {
           const res= await fetch (`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review`,{
             method: 'post',
