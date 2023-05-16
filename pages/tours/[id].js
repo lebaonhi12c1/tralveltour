@@ -1,7 +1,7 @@
 import Background from "@/components/Background";
 import { tours, userComments } from "@/fakedata";
 import DefaultLayout from "@/layout/DefaultLayout";
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import tourdetaibackground from "@/public/images/background3.jpg";
 import Hero from "@/components/Hero";
 import { SlPlane } from "react-icons/sl";
@@ -107,7 +107,31 @@ function TourDetail({ tour,reviews }) {
       alert('Your must be login!')
     }
   }
-
+  const handleDeleteComment = useCallback(async(value)=>{
+    setFeeback({...feedback,loading: true})
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review/${value._id}`,{
+            method: 'delete',
+            headers: {
+                'Content-Type': 'application/json',
+                
+            }
+            ,
+            body: JSON.stringify({
+                userId: JSON.parse(localStorage.getItem('user'))._id,
+                access_token_client: JSON.parse(localStorage.getItem('user')).access_token_client
+            })
+        })
+        const data = await res.json()
+        setFeeback({notification: true,message: data.message,success: true,loading: false})
+        alert(feedback.message)
+        getReview()
+    } catch (error) {
+      setFeeback({notification: true,message: 'Fail!',success: true,loading: false})
+      alert(feedback.message)
+      throw error
+    }
+})
   return (
     <div>
       {/* <Background url={tourdetaibackground} /> */}
@@ -148,7 +172,7 @@ function TourDetail({ tour,reviews }) {
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
                       <div className="flex flex-col lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <SlPlane />
-                        <div className=" w-full text-secondary clamp_1">
+                        <div className=" w-full text-secondary clamp_1 text-center">
                           {tour.title}
                         </div>
                       </div>
@@ -276,7 +300,7 @@ function TourDetail({ tour,reviews }) {
             <div className="root-container">
                <div className="flex flex-col gap-10 py-[60px]">
                     {reviewlist.map((item,index)=>(
-                        <CardUserComent value={item} key={index} />
+                        <CardUserComent value={item} key={index}handleRemove={handleDeleteComment} />
                     ))}
                </div>
             </div>
@@ -286,7 +310,7 @@ function TourDetail({ tour,reviews }) {
                   <div className='text-[24px]'>Get in Touch</div>
                   <div>Văn phòng hạng A nằm tại số 29 đường Lê Duẩn, Quận 1, TP.HCM</div>
                   <div>096 651 27 40</div>
-                  <div className="w-[90%]">trekking.himalayanofficial@gmail.com</div>
+                  <div className="w-[90%] text-center">trekking.himalayanofficial@gmail.com</div>
                   <div className="flex items-center gap-2 text-[24px]">
                       <FaFacebookF/>
                       <BsTwitter/>
