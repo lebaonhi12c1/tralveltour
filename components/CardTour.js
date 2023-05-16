@@ -8,6 +8,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 function CardTour({ value }) {
+  const starts = []
+  const getStarts = ()=>{
+    for (let i = 0; i < value.rating; i++) {
+      starts.push(i)
+    }
+  }
+  getStarts()
   return (
     <Link href={`/tours/${value._id}`} className="">
       <div className="rounded-lg bg-white overflow-hidden p-4 pb-5 flex flex-col gap-4  active:scale-90 duration-200 border border-[#666ec9]  shadow-lg shadow-slate-400 h-[462px] w-[315px]">
@@ -18,7 +25,6 @@ function CardTour({ value }) {
               alt={value.title}
               title={value.title}
               loading="lazy"
-            
               className="w-full h-full object-cover hover:scale-110 duration-200"
               fill={true}
             />
@@ -27,10 +33,9 @@ function CardTour({ value }) {
             <div className="text-white italic">{value.title}</div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
-                {
-                  Array(value.rating).fill().map((item) => (
-                    <AiFillStar className=" text-yellow-500" key={uuidv4()} />
-                  ))}
+                {starts.map(item=>(
+                  <AiFillStar className=" text-yellow-500" key={uuidv4()} />
+                ))}
               </div>
               <div className=" italic text-slate-300">
                     {value.rating}/Rating
