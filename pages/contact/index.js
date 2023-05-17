@@ -7,17 +7,18 @@ import  Image  from 'next/image';
 //import { AiFillAccountBook, AiFillMail, AiFillPhone } from 'react-icons/ai';
 import ContactFrom from '@/components/ContactFrom'
 import  background2  from '@/public/images/background2.jpg';
+import logo from '@/public/images/logotopnepal.jpg'
 function Contact(props) {
     return (
         <div>
-            <Background url={goldbackground}/>
+            {/* <Background url={goldbackground}/> */}
             <div className='center-element'>
                 <Hero type={'destination'} heading={'Contact Us'}/>
                 <div className = 'bg-white py-[40px] lg:py-[60px]'>
                 <div className = 'root-container'>
                     <div className='flex flex-col lg:flex-row gap-4 lg:gap-6'>
-                        <div className='relative h-[280px] lg:w-full lg:flex-1 rounded-md overflow-hidden'>
-                            <Image src={background2} fill={true} title='Top Nepal Treck' alt='Top Nepal Treck' className='object-cover'/>
+                        <div className='relative h-[280px] lg:w-full lg:flex-1 rounded-md overflow-hidden shadow-lg shadow-slate-200'>
+                            <Image src={logo} fill={true} title='Top Nepal Treck' alt='Top Nepal Treck' className='object-contain'/>
                         </div>
                         <div className = 'flex flex-col gap-4 lg:flex-1'>
                             <h5 className='text-secondary text-[24px]'>

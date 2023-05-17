@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { userContext } from '@/context/user';
 import LazyLoad from '@/components/LazyLoad';
 import logotopnepal from '@/public/images/logotopnepal.jpg'
+import nepalbackground from '@/public/images/nepalbackground.jpg'
 function Login(props) {
     const [loading,setLoading] = useState(false)
     const router = useRouter()
@@ -61,7 +62,7 @@ function Login(props) {
     }
     return (
         <div>
-            <Background url={backgournd} />
+            <Background url={nepalbackground} />
             <div className='flex items-center justify-center h-screen'>
                 <div className='bg-white p-4 w-[90%] lg:p-10 lg:w-[500px] rounded-md flex flex-col items-center gap-4'>
                     <div className='text-[32px] font-bold'>Login</div>

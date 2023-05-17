@@ -10,6 +10,7 @@ import Loading from '@/components/Loading';
 import LazyLoad from '@/components/LazyLoad';
 import { useRouter } from 'next/router';
 import logotopnepal from '@/public/images/logotopnepal.jpg'
+import nepalbackground from '@/public/images/nepalbackground.jpg'
 // {
 //     fullname: '',
 //     phone: '',
@@ -111,7 +112,7 @@ function Register(props) {
     }
     return (
         <div>
-            <Background url={backgournd} />
+            <Background url={nepalbackground} />
             <div className='flex items-center justify-center my-10'>
                 <div className='bg-white p-4 w-[90%] lg:p-10 lg:w-[500px] rounded-md flex flex-col items-center gap-4'>
                     <div className='text-[32px] font-bold'>Register</div>
