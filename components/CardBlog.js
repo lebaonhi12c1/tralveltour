@@ -12,7 +12,7 @@ function CardBlog({value}) {
                 <Image src={value.image} alt={value.title}title={value.title} loading='eager' className='w-full h-full object-cover hover:scale-110 duration-200' fill={true} />
             </div>
             <div className='flex flex-col gap-4 col-span-2'>
-                <h5 className="text-[20px] leading-[20px] text-secondary font-bold lg:text-[24px]">{value.title}</h5>
+                <h5 className="text-[20px] leading-[30px] text-secondary font-bold lg:text-[24px]">{value.title}</h5>
                 <p className="italic underline">{value.date}</p>
                 <p className=" line-clamp-6 lg:line-clamp-[8]">
                     {value.description}

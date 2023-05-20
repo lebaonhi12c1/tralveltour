@@ -7,6 +7,7 @@ import { getReponsive } from "@/globalfuntions";
 import Image from 'next/image';
 import CardBlog from "@/components/CardBlog";
 import Paging from "@/components/Paging";
+import blogbackground from '@/public/images/blogbackground4.jpg'
 function Blogs({blogs}) {
   const reponsive = getReponsive()
   return (
@@ -34,7 +35,7 @@ function Blogs({blogs}) {
                 <span className="text-primary text-center uppercase font-bold lg:text-[24px]">let&apos;s go</span>
               </div>
               <div className="lg:flex-1 h-[260px] lg:h-full relative">
-                <Image src='https://img.freepik.com/free-photo/young-woman-taking-photo-with-her-phone-beautiful-mountain-view_1258-84894.jpg?w=996&t=st=1680765316~exp=1680765916~hmac=d39e46ff3d8f58ef823bb96776227045c666b9f17ad079c04a474f66ca97f194' alt="Blog background Enjot Nepal"title="Blog background Enjot Nepal" loading="eager" className="w-full h-full object-cover" fill={true} />
+                <Image src={blogbackground} loading="eager" className="w-full h-full object-cover" fill={true} />
               </div>
             </div>
           </div>
