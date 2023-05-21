@@ -39,7 +39,7 @@ function About(props) {
               </p>
             </div>
           </div>
-          <div className="bg-primary py-[60px]">
+          <div className="py-[20px]">
             <div className="root-container">
               <div className="flex flex-col gap-10 text-secondary">
                 <h4 className="text-[30px] italic">

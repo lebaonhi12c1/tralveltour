@@ -101,7 +101,7 @@ function Navbar({ destination }) {
                                  <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[250px] rounded-md overflow-hidden destination_modal m-0')}>
                                         {destinations?.map(item => (
                                             <li key={item._id}>
-                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300 clamp_1'>{item.name}</Link>
+                                                <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300 whitespace-nowrap text-secondary'>{item.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
@@ -128,13 +128,13 @@ function Navbar({ destination }) {
                                         ))}
                                     </ul>
                                 )} */}
-                                <ul className={classNames(styled.tour_modal,'bg-white hidden  gap-4 shadow-md shadow-slate-500 absolute top-full p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2 w-[600px] grid-cols-3 m-0')}>
+                                <ul className={classNames(styled.tour_modal,'bg-white hidden  gap-4 shadow-md shadow-slate-500 absolute top-full p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2 w-fit m-0 max-h-[400px] overflow-y-auto')}>
                                         {destinations?.map((item, index) => (
                                             <div key={index} className='flex flex-col gap-2'>
-                                                <div className="font-bold text-[16px] whitespace-nowrap  clamp_1 max-w-[150px]">{item.name}</div>
-                                                <ul className='flex flex-col gap-2'>
+                                                <div className="font-bold text-[16px] whitespace-nowrap">{item.name}</div>
+                                                <ul className='flex flex-col gap-2 m-0'>
                                                     {item.tours.map((item, index) => (
-                                                        <Link href={`/tours/${item._id}`} className="font-medium text-[14px] hover:text-primary clamp_1 max-w-[150px]" key={index}>{item.title}</Link>
+                                                        <Link href={`/tours/${item._id}`} className="font-medium text-[14px] hover:text-primary whitespace-nowrap" key={index}>{item.title}</Link>
                                                     ))}
                                                 </ul>
                                             </div>

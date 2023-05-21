@@ -19,6 +19,7 @@ import Image from "next/image";
 import { userContext } from "@/context/user";
 import LazyLoad from "@/components/LazyLoad";
 function TourDetail({ tour,reviews }) {
+  
   const {user} = useContext(userContext)
   const [evalute,setEvalute] = useState({
     comment: '',
@@ -132,6 +133,9 @@ function TourDetail({ tour,reviews }) {
       throw error
     }
 })
+const getFormat = number=>{
+  return number >= 1000 ? new Intl.NumberFormat('en-US', { style: 'decimal', useGrouping: true }).format(number) : number.toString()
+}
   return (
     <div>
       {/* <Background url={tourdetaibackground} /> */}
@@ -172,8 +176,8 @@ function TourDetail({ tour,reviews }) {
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">
                       <div className="flex flex-col lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <SlPlane />
-                        <div className=" w-full text-secondary clamp_1 text-center">
-                          {tour.title}
+                        <div className=" w-full text-red-500 font-bold clamp_1 text-center ">
+                          ${getFormat(tour.price)}
                         </div>
                       </div>
                     </div>
@@ -190,9 +194,9 @@ function TourDetail({ tour,reviews }) {
                       <div className="flex flex-col  lg:gap-1 items-center justify-center lg:h-[30px] lg:text-[12px] lg:px-2 h-[100px] px-1 ">
                         <FiUsers />
                         <div className=" text-secondary whitespace-nowrap">
-                          Max People:
+                          Duration:
                         </div>
-                        <div>{tour.rating}</div>
+                        <div>{tour.numberOfDay}</div>
                       </div>
                     </div>
                     <div className="rounded-md border-[2px] border-black lg:py-[28px]">

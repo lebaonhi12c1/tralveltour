@@ -9,7 +9,7 @@ function BlogDetails({blog}) {
             <div className="bg-white">
                 <div className="root-container">
                     <div className='flex flex-col gap-[40px] py-[60px]'>
-                        <h1 className='text-[24px] text-secondary font-bold lg:text-[60px]'>
+                        <h1 className='text-[24px] lg:text-[40px]  text-secondary font-bold '>
                             {blog.title}
                         </h1>
                        <div className='h-[280px] lg:h-[440px] relative'> <Image src={blog.image} alt={blog.title} title={blog.title} loading='eager' className=' object-cover ' fill={true} /></div>
