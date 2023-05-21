@@ -43,16 +43,16 @@ function CardTour({ value }) {
             </div> */}
           </div>
           <div className="grid grid-cols-3">
-            <div className="flex items-center justify-center p-2 border border-secondary gap-2 text-[12px] line-clamp-1">
+            <div className="flex items-center justify-center p-2 border border-secondary gap-2 text-[12px]  h-[38px]  overflow-hidden">
               <BsCalendarDate />
-              <span>{value.numberOfDay} Day</span>
+              <span className=" line-clamp-1">{value.numberOfDay} Day</span>
             </div>
-            <div className="flex items-center justify-center p-2 border border-secondary gap-1 text-[12px] line-clamp-1">
+            <div className="flex items-center justify-center p-2 border border-secondary gap-1 text-[12px]  h-[38px]  overflow-hidden line-clamp-1">
               {value.level}
             </div>
-            <div className="flex items-center justify-center p-2 border border-secondary gap-2 text-[12px] line-clamp-1">
+            <div className="flex items-center justify-center p-2 border border-secondary gap-2 text-[12px]  h-[38px]  overflow-hidden">
               <AiOutlineUser />
-              <span>{value.age}</span>
+              <span className=" line-clamp-1">{value.age}</span>
             </div>
           </div>
         </div>

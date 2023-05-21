@@ -80,7 +80,7 @@ function Navbar({ destination }) {
 
                         </Link>
                         {/* nav in desktop */}
-                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12 text-secondary '>
+                        <ul className='hidden lg:flex items-center flex-[2] justify-center gap-12 text-secondary list-none m-0 '>
                             <li title='Home'>
                                 <Link className={`h-full hover:text-orange-600 lg:text-[16.75px] lg:tracking-[0.65px] py-2 duration-200 whitespace-nowrap ${router.pathname === '/' ? 'text-primary' : 'text-secondary'}`} href={'/'}>Home</Link>
                             </li>
@@ -98,7 +98,7 @@ function Navbar({ destination }) {
                                         ))}
                                     </ul>
                                 )} */}
-                                 <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[250px] rounded-md overflow-hidden destination_modal')}>
+                                 <ul className={classNames(styled.destination_modal,'bg-white hidden flex-col  shadow-md shadow-gray-500 absolute top-full w-[250px] rounded-md overflow-hidden destination_modal m-0')}>
                                         {destinations?.map(item => (
                                             <li key={item._id}>
                                                 <Link href={`/destinations/${item._id}`} className='text-[16px] p-2 px-4 hover:bg-slate-300 clamp_1'>{item.name}</Link>
@@ -128,7 +128,7 @@ function Navbar({ destination }) {
                                         ))}
                                     </ul>
                                 )} */}
-                                <ul className={classNames(styled.tour_modal,'bg-white hidden  gap-4 shadow-md shadow-slate-500 absolute top-full p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2 w-[600px] grid-cols-3')}>
+                                <ul className={classNames(styled.tour_modal,'bg-white hidden  gap-4 shadow-md shadow-slate-500 absolute top-full p-4 rounded-md overflow-hidden left-1/2 -translate-x-1/2 w-[600px] grid-cols-3 m-0')}>
                                         {destinations?.map((item, index) => (
                                             <div key={index} className='flex flex-col gap-2'>
                                                 <div className="font-bold text-[16px] whitespace-nowrap  clamp_1 max-w-[150px]">{item.name}</div>
@@ -192,7 +192,7 @@ function Navbar({ destination }) {
                         {/* end nav in mobile */}
                     </div>
                     {openMenu && (
-                        <ul className='flex flex-col gap-2 shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white max-h-[400px] overflow-y-auto' ref={menuRef}>
+                        <ul className='flex flex-col gap-2 shadow-md shadow-gray-300 absolute w-full top-full left-0 right-0 p-4 bg-white max-h-[400px] overflow-y-auto list-none m-0' ref={menuRef}>
                             <li><Link href={'/'} className={`${router.pathname === '/' ? 'text-primary' : 'text-secondary'}`}>Home</Link></li>
                             <li>
                                 <div className='flex items-center justify-between' onClick={() => setOpenDestination(!openDestination)}>
@@ -202,9 +202,9 @@ function Navbar({ destination }) {
                                     {openDestination ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openDestination && (
-                                    <ul className=" flex flex-col gap-1 p-4 max-h-[200px] overflow-y-auto">
+                                    <ul className=" flex flex-col gap-1 p-1 max-h-[200px] overflow-y-auto">
                                         {destinations?.map(item => (
-                                            <Link href={`/destinations/${item._id}`} key={item._id}>{item.name}</Link>
+                                            <Link href={`/destinations/${item._id}`} className='whitespace-nowrap clamp_1' key={item._id}>- {item.name}</Link>
                                         ))}
                                     </ul>
                                 )}
@@ -218,9 +218,9 @@ function Navbar({ destination }) {
                                     {openTours ? <AiOutlineUp /> : <AiOutlineDown />}
                                 </div>
                                 {openTours && (
-                                    <ul className=" flex flex-col gap-1 p-4 max-h-[200px] overflow-y-auto">
+                                    <ul className=" flex flex-col gap-1 p-1 max-h-[200px] overflow-y-auto">
                                         {tours?.map(item => (
-                                            <Link href={`/tours/${item._id}`} key={item._id}>{item.title}</Link>
+                                            <Link href={`/tours/${item._id}`}className='whitespace-nowrap clamp_1' key={item._id}>- {item.title}</Link>
                                         ))}
                                     </ul>
                                 )}

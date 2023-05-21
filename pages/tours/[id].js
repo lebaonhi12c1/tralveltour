@@ -231,7 +231,7 @@ function TourDetail({ tour,reviews }) {
                       Details
                     </h4> */}
                     <div title="details tour" className="">
-                      {tour.description}
+                      {/* {tour.description} */}
                       <br />
                       <div dangerouslySetInnerHTML={{ __html: tour.content }}></div>
                     </div>
