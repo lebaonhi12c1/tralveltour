@@ -10,6 +10,10 @@ ul{
   list-style: inherit;
   margin: 16px 40px;
 }
+ol{
+  list-style:decimal;
+  margin: 16px 40px;
+}
 h1{
   font-size: 2rem;
   line-height: 3rem;
