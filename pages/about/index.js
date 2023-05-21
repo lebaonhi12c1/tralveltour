@@ -4,7 +4,7 @@ import DefaultLayout from "@/layout/DefaultLayout";
 import React from "react";
 import goldbackground from "@/public/images/goldbackground.jpg";
 import Letter from "@/components/Letter";
-function About(props) {
+function About({about}) {
   return (
     <div>
       {/* <Background url={goldbackground} /> */}
@@ -12,7 +12,8 @@ function About(props) {
         <Hero type={"destination"} heading={"About us"} />
         <div className="bg-white py-[40px] lg:py-[60px] flex flex-col gap-10">
           <div className="root-container">
-            <div className="flex flex-col gap-10 text-secondary">
+            <div dangerouslySetInnerHTML={{__html: about.content}}></div>
+            {/* <div className="flex flex-col gap-10 text-secondary">
               <h1 className="font-bold text-[24px] lg:text-[40px]">
                 ​Welcome to our about page!
               </h1>
@@ -37,9 +38,9 @@ function About(props) {
                 travel industry. ​ Contact us today for more details about our
                 services and to start an exciting trip!
               </p>
-            </div>
+            </div> */}
           </div>
-          <div className="py-[20px]">
+          {/* <div className="py-[20px]">
             <div className="root-container">
               <div className="flex flex-col gap-10 text-secondary">
                 <h4 className="text-[30px] italic">
@@ -74,7 +75,7 @@ function About(props) {
               </div>
             </div>
         
-          </div>
+          </div> */}
 
           <Letter/>
         </div>
@@ -83,4 +84,14 @@ function About(props) {
   );
 }
 About.getLayout = DefaultLayout;
+
+export const getServerSideProps = async()=>{
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/about`)
+  const about = await res.json()
+  return {
+    props: {
+      about,
+    }
+  }
+}
 export default About;
