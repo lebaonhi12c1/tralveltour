@@ -14,7 +14,7 @@ import Image from "next/image";
 import ContactFrom from "@/components/ContactFrom";
 import Link from 'next/link'
 import nepalbackground from '@/public/images/nepalbackground.jpg'
-export default function Home({destination,tour}) {
+export default function Home({destination,tour, ratings}) {
   return (
     <>
       <main>
@@ -58,7 +58,7 @@ export default function Home({destination,tour}) {
                   <Slider type="tour" value={tour}/>
                 </div>
                 <div className="pb-10 lg:pb-[60px] lg:mb-[20px]">
-                  <Slider type="rating" />
+                  <Slider type="rating" value={ratings} />
                 </div>
               </div>
             </div>
@@ -83,9 +83,8 @@ export default function Home({destination,tour}) {
                   title="Infomation about Top Nepal"
                   className="text-[16px] lg:text-[19.25px] lg:font-[500] lg:tracking-[0.55px] text-center lg:w-[480px] text-white"
                 >
-                  I’m a paragraph. Double click here or click Edit Text to add
-                  some text of your own or to change the font. Tell your
-                  visitors a bit about your services.
+                  Top Nepal Trek showcase the spectacular Himalayas to a wide range of nature-loving professional and recreational trekkers in order to appreciate the integrity of the gorgeous mountains.
+
                 </p>
                 <Link href={'/about'} className="uppercase rounded-md py-2 px-5 lg:shadow-md lg:font-[600] lg:tracking-[0.75px] text-white hover:scale-105 bg-secondary active:scale-90 duration-200 mt-[10px] lg:mt-[14px]">
                   learn more
@@ -107,11 +106,13 @@ export const getServerSideProps = async()=>{
   const destination = await res.json()
   const restour= await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/tour/publish`)
   const tour = await restour.json()
-
+  const resRating = await fetch(`${process.env.NEXT_PUBLIC_APP_SERVER_URL}/api/review/ratinggt3`)
+  const ratings = await resRating.json()
   return {
     props: {
       destination,
-      tour
+      tour,
+      ratings
     }
   }
 }

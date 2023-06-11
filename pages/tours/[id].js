@@ -308,7 +308,7 @@ const getFormat = number=>{
                     ))}
                </div>
             </div>
-            <div className="bg-black">
+            {/* <div className="bg-black">
               <div className="root-container">
                 <div className="flex flex-col items-start lg:justify-center gap-4 font-bold text-white lg:py-[60px] lg:items-center">
                   <div className='text-[24px]'>Get in Touch</div>
@@ -324,7 +324,7 @@ const getFormat = number=>{
                   
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="root-container">
               <ContactFrom/>
             </div>

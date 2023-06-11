@@ -1,4 +1,4 @@
-import { userRating } from "@/fakedata";
+
 import React, { useEffect, useState } from "react";
 import { Autoplay, Navigation, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,6 +11,7 @@ import CardTour from "./CardTour";
 import CardUserRating from "./CardUserRating";
 
 function Slider({ type,value }) {
+
   const [active,setActive] = useState(false)
   useEffect(()=>{
     const activeTime = setTimeout(() => {
@@ -33,7 +34,7 @@ function Slider({ type,value }) {
         };
       case "rating":
         return {
-          data:  userRating,
+          data:  value,
           Card: CardUserRating,
         };
       default:

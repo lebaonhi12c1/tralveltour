@@ -12,10 +12,10 @@ function Footer(props) {
                         <AiOutlineCopyright/><span>2035 by Top Nepal</span>
                     </div>
                     <div className='flex gap-4'>
-                        <Link href={'https://facebook.com'} className='text-white text-[32px]'>
+                        <Link href={'https://www.facebook.com/topnepaltrek'} className='text-white text-[32px]' target='_blank'>
                             <FaFacebookF/>
                         </Link>
-                        <Link href={'https://instagram.com'} className='text-white text-[32px]'>
+                        <Link href={'https://www.instagram.com/_trekking.himalayan_/'} className='text-white text-[32px]' target='_blank'>
                             <BsInstagram/>
                         </Link>
                     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaFacebookF } from 'react-icons/fa'
+import { FaFacebookF,FaPhoneVolume } from 'react-icons/fa'
+import {AiOutlineMail} from 'react-icons/ai'
 import { BsInstagram } from 'react-icons/bs'
 import Link from 'next/link';
 import LazyLoad from './LazyLoad';
@@ -47,14 +48,22 @@ function ContactFrom(props) {
                 <h5 title='Contact Top Nepal' className="text-[32px] text-secondary tracking-[12px] uppercase font-bold lg:font-[700]">Contact</h5>
                 <h6 title='Contact Top Nepal' className='italic text-[20px] text-secondary lg:font-[600] whitespace-nowrap'>Top Nepal</h6>
                 <div className='border-[2px] w-[20px] border-secondary lg:my-[2.75px]'></div>
-                <Link href={'https://www.facebook.com/enjoynepaltrekking'} className='flex items-center gap-4 lg:my-[1.5px]'>
+                <Link href={'https://www.facebook.com/topnepaltrek'} className='flex items-center gap-4 lg:my-[1.5px] hover:underline text-secondary' target='_blank'>
                     <FaFacebookF className='lg:text-[20px]' />
                     <h6 className='italic text-secondary text-[20px] lg:font-[600]'>Top Nepal</h6>
                 </Link>
-                <Link href={'https://instagram.com'} className='flex items-center gap-4 lg:my-[1.5px]'>
+                <Link href={'https://www.instagram.com/_trekking.himalayan_/'} className='flex items-center gap-4 lg:my-[1.5px] hover:underline text-secondary' target='_blank'>
                     <BsInstagram className='lg:text-[20px]' />
                     <h6 className='italic text-secondary text-[20px] lg:font-[600]'>Top Nepal</h6>
                 </Link>
+                <div className='flex items-center gap-4 lg:my-[1.5px] text-secondary'>
+                    <FaPhoneVolume className='lg:text-[20px]' />
+                    <h6 className='italic text-secondary lg:text-[20px] text-[14px] w-full lg:font-[600]'>(+84) 966 512 740 - (+977) 984 344 7027 </h6>
+                </div>
+                <div className='flex items-center gap-4 lg:my-[1.5px] text-secondary'>
+                    <AiOutlineMail className='lg:text-[20px]' />
+                    <h6 className='italic text-secondary lg:text-[20px] text-[14px] w-full lg:font-[600] '>trekking.himalayanofficial@gmail.com</h6>
+                </div>
             </div>
             <div className='flex flex-col gap-[14px] justify-center lg:flex-1 lg:p-4 lg:rounded-lg'>
                 <div className=' flex flex-col gap-2'>

@@ -13,7 +13,7 @@ import { tourNav } from '@/fakedata'
 import { userContext } from '@/context/user';
 import styled from  '@/styles/navbar/navbar.module.scss'
 import classNames from 'classnames';
-function Navbar({ destination }) {
+function Navbar() {
     const { user, setUser } = useContext(userContext)
     const router = useRouter()
     const [activeActionUser, setActiveActionUser] = useState(false)
