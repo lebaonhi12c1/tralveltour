@@ -8,7 +8,7 @@ import DefaultLayout from "@/layout/DefaultLayout";
 import background2 from "@/public/images/background2.jpg";
 //import home from "@/public/images/home.jpg";
 import homeBackground from "@/public/images/home-background.jpg";
-import background3 from "@/public/images/background3.jpg";
+import nepaltrek_background from "@/public/images/nepaltrek_background.jpg";
 import Slider from "@/components/Slider";
 import Image from "next/image";
 import ContactFrom from "@/components/ContactFrom";
@@ -45,7 +45,7 @@ export default function Home({destination,tour, ratings}) {
                 </div>
               </div>
               <Image
-                src={background3}
+                src={nepaltrek_background}
                 alt="Background T.L travel"
                 title="Background T.L travel"
                 loading="eager"
