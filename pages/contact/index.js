@@ -32,7 +32,7 @@ function Contact(props) {
                                 <div>📞(+84) 966 512 740 - (+977) 984 344 7027 </div>
                             </div>
                             <div>
-                                <div className='w-[90%]'>✉️  trekking.himalayanofficial@gmail.com</div>
+                                <a href='mailto:trekking.himalayanofficial@gmail.com' className='w-[90%] hover:text-blue-500'>✉️   topnepaltrek@gmail.com</a>
                             </div>
                         </div>
                     </div>

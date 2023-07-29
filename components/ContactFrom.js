@@ -62,7 +62,9 @@ function ContactFrom(props) {
                 </div>
                 <div className='flex items-center gap-4 lg:my-[1.5px] text-secondary'>
                     <AiOutlineMail className='lg:text-[20px]' />
-                    <h6 className='italic text-secondary lg:text-[20px] text-[14px] w-full lg:font-[600] '>trekking.himalayanofficial@gmail.com</h6>
+                    <a href='mailto:trekking.himalayanofficial@gmail.com' className='hover:underline'>
+                        <h6 className='italic text-secondary lg:text-[20px] text-[14px] w-full lg:font-[600] '>topnepaltrek@gmail.com</h6>
+                    </a>
                 </div>
             </div>
             <div className='flex flex-col gap-[14px] justify-center lg:flex-1 lg:p-4 lg:rounded-lg'>
