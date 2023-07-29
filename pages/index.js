@@ -7,7 +7,7 @@ import DefaultLayout from "@/layout/DefaultLayout";
 //const inter = Inter({ subsets: ['latin'] })
 import background2 from "@/public/images/background2.jpg";
 //import home from "@/public/images/home.jpg";
-import homeBackground from "@/public/images/home-background.jpg";
+import bg_about_us from "@/public/images/bg_about_us.jpg";
 import nepaltrek_background from "@/public/images/nepaltrek_background.jpg";
 import Slider from "@/components/Slider";
 import Image from "next/image";
@@ -33,7 +33,7 @@ export default function Home({destination,tour, ratings}) {
             </div>
             <div className="h-[255px] lg:h-[600px] relative mt-[110px]">
               <div className="root-container absolute -top-[145px] left-1/2 -translate-x-1/2 ">
-                <div className="bg-primary p-4 flex flex-col gap-4 min-h-[300px] justify-center rounded-sm lg:gap-10 lg:h-[400px]">
+                <div className="bg-primary p-4 flex flex-col gap-4 min-h-[300px] justify-center rounded-sm lg:gap-10 lg:h-[200px]">
                   <h2 className=" uppercase text-[28.75px] font-bold tracking-[8.75px] lg:text-[44px] lg:ml-10 text-secondary">
                     Hello there!
                   </h2>
@@ -65,7 +65,7 @@ export default function Home({destination,tour, ratings}) {
             <div className="flex flex-col lg:flex-row">
               <div className="h-[300px] lg:flex-1 lg:h-[455px]">
                 <Image
-                  src={homeBackground}
+                  src={bg_about_us}
                   alt={"Top Nepal"}
                   title="Top Nepal"
                   loading="eager"
